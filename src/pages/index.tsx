@@ -1,21 +1,21 @@
-import { getContent } from '@/utils/sanity';
+import { getSiteSettings } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export const getStaticProps = (async (context) => {
-	const content = await getContent();
-	return { props: { content } };
+	const siteSettings = await getSiteSettings();
+	return { props: { siteSettings } };
 }) satisfies GetStaticProps<{
-	content: any;
+	siteSettings: any;
 }>;
 
 export default function Home({
-	content,
+	siteSettings,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	console.log(content);
+	console.log(siteSettings);
 
 	return (
 		<div>
-			<h1>Hallo Welt!</h1>
+			<h1>{siteSettings.title}</h1>
 		</div>
 	);
 }

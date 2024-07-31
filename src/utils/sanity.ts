@@ -11,7 +11,7 @@ export const client = createClient({
 });
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
-export async function getContent() {
-	const content = await client.fetch<any>('*');
-	return content;
+export async function getSiteSettings() {
+	const data = await client.fetch<any>('*[_type == "siteSettings"][0]');
+	return data;
 }
