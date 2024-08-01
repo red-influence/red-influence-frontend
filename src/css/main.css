@@ -1,0 +1,13 @@
+/* Basics */
+
+@import 'normalize';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'globals';
+
+/* Elements */
+
+/* Components */
