@@ -1,3 +1,4 @@
+import { Menu } from '@/types/sanity.types';
 import { Button } from '@nextui-org/button';
 import {
 	Navbar,
@@ -15,7 +16,7 @@ export default function Navigation({
 	menu,
 }: {
 	title: string;
-	menu: any;
+	menu: Menu;
 }) {
 	return (
 		<Navbar isBordered className="h-16">
@@ -25,7 +26,7 @@ export default function Navigation({
 				</Link>
 			</NavbarBrand>
 			<NavbarContent className="hidden sm:flex gap-8" justify="center">
-				{menu.items.map((item: any, index: number) => (
+				{menu.items.map((item, index) => (
 					<NavbarItem key={index}>
 						<Link color="foreground" href={item.url}>
 							{item.title}

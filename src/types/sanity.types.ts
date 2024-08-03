@@ -75,6 +75,42 @@ export type SiteSettings = {
   _updatedAt: string
   _rev: string
   title: string
+  imprint: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+    listItem?: 'bullet' | 'number'
+    markDefs?: Array<{
+      href?: string
+      _type: 'link'
+      _key: string
+    }>
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
+  privacy: Array<{
+    children?: Array<{
+      marks?: Array<string>
+      text?: string
+      _type: 'span'
+      _key: string
+    }>
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+    listItem?: 'bullet' | 'number'
+    markDefs?: Array<{
+      href?: string
+      _type: 'link'
+      _key: string
+    }>
+    level?: number
+    _type: 'block'
+    _key: string
+  }>
 }
 
 export type Menu = {
@@ -86,8 +122,8 @@ export type Menu = {
   title?: string
   slug: Slug
   items: Array<{
-    title?: string
-    url?: string
+    title: string
+    url: string
     _type: 'item'
     _key: string
   }>
@@ -148,8 +184,8 @@ export type Hero = {
   title?: string
   headlines: Array<string>
   persons: Array<{
-    name?: string
-    image?: {
+    name: string
+    image: {
       asset?: {
         _ref: string
         _type: 'reference'
@@ -160,7 +196,7 @@ export type Hero = {
       crop?: SanityImageCrop
       _type: 'image'
     }
-    instagram?: string
+    instagram: string
     _key: string
   }>
   description: Array<{

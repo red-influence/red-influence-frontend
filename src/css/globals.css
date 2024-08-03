@@ -37,6 +37,7 @@ main {
 
 .page-content {
 	margin-top: 6.5rem;
+	min-height: calc(100vh - (6.5rem + 8rem));
 }
 
 .swiper-slide {

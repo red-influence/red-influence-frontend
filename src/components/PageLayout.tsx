@@ -17,6 +17,11 @@ export default function RootLayout({
 		[menus]
 	);
 
+	const footerMenu = useMemo(
+		() => menus.find((menu: any) => menu.slug.current === 'footer-menu'),
+		[menus]
+	);
+
 	return (
 		<div id="content">
 			<div className="header fixed top-0 w-full z-50">
@@ -26,7 +31,7 @@ export default function RootLayout({
 
 			{children}
 
-			<Footer copyright={siteSettings.title} />
+			<Footer copyright={siteSettings.title} menu={footerMenu} />
 		</div>
 	);
 }
