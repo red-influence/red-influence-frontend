@@ -24,10 +24,7 @@ export default function Contact() {
 
 				<form
 					className="w-full max-w-6xl flex flex-col gap-10 items-start"
-					data-netlify="true"
 					name="contact"
-					method="POST"
-					action="/"
 					onSubmit={handleFormSubmit}
 				>
 					<Input type="hidden" name="form-name" value="contact" />
