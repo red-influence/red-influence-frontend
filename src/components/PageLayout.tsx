@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import Navigation from './Navigation';
 import Banner from './Banner';
+import Footer from './Footer';
 
 export default function RootLayout({
 	children,
@@ -22,7 +23,10 @@ export default function RootLayout({
 				<Banner />
 				<Navigation title={siteSettings.title} menu={mainMenu} />
 			</div>
+
 			{children}
+
+			<Footer copyright={siteSettings.title} />
 		</div>
 	);
 }
