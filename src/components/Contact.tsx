@@ -10,7 +10,7 @@ export default function Contact() {
 
 				<form
 					className="w-full max-w-6xl flex flex-col gap-10 items-start"
-					netlify
+					data-netlify="true"
 				>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
 						<Input type="text" label="Vorname" size="lg" />
