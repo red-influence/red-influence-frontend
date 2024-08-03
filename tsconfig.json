@@ -27,7 +27,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/app/components/Questiontsx"
+		"src/app/components/Questiontsx",
+		"index.d.ts"
 	],
 	"exclude": ["node_modules"]
 }
