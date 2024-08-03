@@ -19,9 +19,7 @@
 		],
 		"baseUrl": "src/",
 		"paths": {
-			"@/utils/*": ["utils/*"],
-			"@/components/*": ["components/*"],
-			"@/css/*": ["css/*"]
+			"@/*": ["./*"]
 		}
 	},
 	"include": [
