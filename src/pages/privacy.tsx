@@ -15,7 +15,7 @@ export default function Privacy({
 	return (
 		<div className="page-content">
 			<div className="container mx-auto flex flex-col gap-y-20 py-20 px-5 md:px-0">
-				<h1 className="text-6xl ">Datenschutzerklärung</h1>
+				<h1 className="text-3xl md:text-6xl">Datenschutzerklärung</h1>
 
 				<div className="max-w-4xl text-xl leading-loose flex flex-col gap-5">
 					<PortableText value={siteSettings.privacy as any} />

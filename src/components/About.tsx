@@ -13,7 +13,7 @@ export default function About({
 			className="container py-20 flex flex-col gap-y-20 mx-auto px-5 md:px-0 section"
 			id="about"
 		>
-			<h2 className="text-6xl">{title}</h2>
+			<h2 className="text-3xl md:text-6xl">{title}</h2>
 			<div className="max-w-4xl text-xl leading-loose flex flex-col gap-y-10">
 				<PortableText value={description as any} />
 			</div>
