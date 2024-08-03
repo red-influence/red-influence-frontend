@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import PageLayout from '@/components/PageLayout';
 import { NextPage } from 'next';
 import App, { AppContext, AppInitialProps, AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
@@ -32,9 +32,9 @@ export default function MyApp({
 	return (
 		<main className={rubik.className}>
 			<Providers>
-				<Layout siteSettings={siteSettings} menus={menus}>
+				<PageLayout siteSettings={siteSettings} menus={menus}>
 					<Component {...pageProps} />
-				</Layout>
+				</PageLayout>
 			</Providers>
 		</main>
 	);
