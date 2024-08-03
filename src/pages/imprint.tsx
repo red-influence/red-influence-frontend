@@ -14,7 +14,7 @@ export default function Imprint({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="page-content">
-			<div className="container mx-auto flex flex-col gap-y-20 py-20">
+			<div className="container mx-auto flex flex-col gap-y-20 py-20 px-5 md:px-0">
 				<h1 className="text-6xl ">Impressum</h1>
 
 				<div className="max-w-4xl text-xl leading-loose flex flex-col gap-5">

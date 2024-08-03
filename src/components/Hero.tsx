@@ -24,16 +24,18 @@ export default function Hero({
 	case_studies: (CaseStudy & { service: { title: string } })[];
 }) {
 	return (
-		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-20">
+		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-20 px-5 md:px-0">
 			<div className="flex flex-col gap-y-10">
-				<small className="text-4xl text-primary">red influence</small>
+				<small className="text-xl md:text-4xl text-primary">
+					red influence
+				</small>
 
 				<Swiper
 					direction={'vertical'}
 					autoHeight
 					loop={true}
 					modules={[Autoplay]}
-					className="text-8xl max-w-6xl !m-0"
+					className="text-2xl md:text-8xl max-w-6xl !m-0"
 					spaceBetween={50}
 					autoplay={{
 						delay: 8000,
@@ -86,7 +88,7 @@ export default function Hero({
 					{case_studies.map((caseStudy, index) => (
 						<Card
 							key={index}
-							className="py-4 bg-background/60 dark:bg-default-100/50"
+							className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-80"
 							shadow="none"
 							isBlurred
 						>
@@ -105,7 +107,7 @@ export default function Hero({
 											? imageToUrl(caseStudy.thumbnail)
 											: '/placeholder.webp'
 									}
-									width={270}
+									width="100%"
 								/>
 							</CardBody>
 						</Card>

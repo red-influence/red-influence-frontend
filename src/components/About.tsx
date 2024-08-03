@@ -9,7 +9,10 @@ export default function About({
 	description: AboutType['description'];
 }) {
 	return (
-		<div className="container py-20 flex flex-col gap-y-20 mx-auto" id="about">
+		<div
+			className="container py-20 flex flex-col gap-y-20 mx-auto px-5 md:px-0"
+			id="about"
+		>
 			<h2 className="text-6xl">{title}</h2>
 			<div className="max-w-4xl text-xl leading-loose flex flex-col gap-y-10">
 				<PortableText value={description as any} />
