@@ -2,7 +2,7 @@ import { Service } from '@/types/sanity.types';
 
 export default function Services({ items }: { items: Service[] }) {
 	return (
-		<div className="services bg-background px-5 md:px-0" id="services">
+		<div className="services bg-background px-5 md:px-0 section" id="services">
 			<div className="py-20 flex flex-col gap-y-20 mx-auto" id="services">
 				<div className="container mx-auto px-5 md:px-0">
 					<h2 className="text-6xl ">Leistungen</h2>

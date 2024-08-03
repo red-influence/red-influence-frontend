@@ -49,3 +49,7 @@ main {
 .hero strong {
 	@apply font-medium text-primary;
 }
+
+.section {
+	scroll-margin-top: 6.5rem;
+}
