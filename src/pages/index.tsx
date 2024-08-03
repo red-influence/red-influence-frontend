@@ -25,8 +25,6 @@ export default function Home({
 	services,
 	caseStudies,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	console.log(hero);
-
 	return (
 		<div className="page-content">
 			<Hero {...hero} services={services} caseStudies={caseStudies} />

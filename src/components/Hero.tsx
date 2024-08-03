@@ -22,8 +22,6 @@ export default function Hero({
 	services: any[];
 	case_studies: any[];
 }) {
-	console.log(case_studies);
-
 	return (
 		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-20">
 			<div className="flex flex-col gap-y-10">
