@@ -25,7 +25,7 @@ export default function Hero({
 }) {
 	return (
 		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-12 md:py-20 px-5 md:px-0">
-			<div className="flex flex-col gap-y-10">
+			<div className="flex flex-col gap-y-10 max-w-6xl">
 				<small className="text-3xl md:text-4xl text-primary">
 					red influence
 				</small>
@@ -35,7 +35,7 @@ export default function Hero({
 					autoHeight
 					loop={true}
 					modules={[Autoplay]}
-					className="text-2xl md:text-8xl max-w-6xl !m-0"
+					className="text-2xl md:text-8xl !m-0"
 					spaceBetween={50}
 					autoplay={{
 						delay: 8000,
