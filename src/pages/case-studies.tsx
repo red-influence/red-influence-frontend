@@ -13,7 +13,7 @@ export default function CaseStudies({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="page-content">
-			<div className="container mx-auto flex flex-col gap-y-20 py-20 px-5 md:px-0">
+			<div className="container mx-auto flex flex-col gap-y-20 py-12 md:py-20 px-5 md:px-0">
 				<h1 className="text-3xl md:text-6xl">Case Studies</h1>
 			</div>
 		</div>
