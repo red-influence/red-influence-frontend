@@ -1,4 +1,4 @@
-import { Service } from '@studio/sanity.types';
+import { Service } from '@/types/sanity.types';
 
 export default function Services({ items }: { items: Service[] }) {
 	return (

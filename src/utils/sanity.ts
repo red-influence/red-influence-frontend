@@ -23,7 +23,7 @@ import {
 	Menu,
 	SiteSettings,
 	internalGroqTypeReferenceTo,
-} from '@studio/sanity.types';
+} from '@/types/sanity.types';
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getSiteSettings() {

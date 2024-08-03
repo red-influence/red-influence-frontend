@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import { About as AboutType } from '@studio/sanity.types';
+import { About as AboutType } from '@/types/sanity.types';
 
 export default function About({
 	title,

@@ -8,7 +8,7 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
-import { CaseStudy, Service, Hero as HeroType } from '@studio/sanity.types';
+import { CaseStudy, Service, Hero as HeroType } from '@/types/sanity.types';
 
 export default function Hero({
 	headlines,
