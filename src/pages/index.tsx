@@ -1,17 +1,38 @@
-import { getSiteSettings } from '@/utils/sanity';
+import About from '@/components/About';
+import Contact from '@/components/Contact';
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import { getAbout, getCaseStudies, getHero, getServices } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export const getStaticProps = (async (context) => {
-	const siteSettings = null;
-	return { props: { siteSettings } };
+	const hero = await getHero();
+	const about = await getAbout();
+	const services = await getServices();
+	const caseStudies = await getCaseStudies();
+
+	return { props: { hero, about, services, caseStudies } };
 }) satisfies GetStaticProps<{
-	siteSettings: any;
+	hero: any;
+	about: any;
+	services: any;
+	caseStudies: any;
 }>;
 
 export default function Home({
-	siteSettings,
+	hero,
+	about,
+	services,
+	caseStudies,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	console.log(siteSettings);
+	console.log(hero);
 
-	return <div className="page-content">Hallo Welt!</div>;
+	return (
+		<div className="page-content">
+			<Hero {...hero} services={services} caseStudies={caseStudies} />
+			<Services items={services} />
+			<About {...about} />
+			<Contact />
+		</div>
+	);
 }

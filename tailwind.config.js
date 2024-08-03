@@ -1,4 +1,4 @@
-import { nextui } from '@nextui-org/react';
+const { nextui } = require('@nextui-org/theme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
 				dark: {
 					layout: {},
 					colors: {
-						background: '#191919', // or DEFAULT
+						background: '#040D12', // or DEFAULT
 						foreground: '#DDE6ED', // or 50 to 900 DEFAULT
 						primary: {
 							foreground: '#DDE6ED',
