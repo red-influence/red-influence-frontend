@@ -53,3 +53,7 @@ main {
 .section {
 	scroll-margin-top: 6.5rem;
 }
+
+.header header {
+	@apply px-5;
+}
