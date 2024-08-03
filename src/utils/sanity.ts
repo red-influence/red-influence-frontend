@@ -14,19 +14,34 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(client);
 
+import {
+	SanityImageAsset,
+	CaseStudy,
+	Service,
+	About,
+	Hero,
+	Menu,
+	SiteSettings,
+	internalGroqTypeReferenceTo,
+} from '@studio/sanity.types';
+
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getSiteSettings() {
-	const data = await client.fetch<any>('*[_type == "siteSettings"][0]');
+	const data = await client.fetch<SiteSettings>(
+		'*[_type == "siteSettings"][0]'
+	);
 	return data;
 }
 
 export async function getMenus() {
-	const data = await client.fetch<any>('*[_type == "menu"]');
+	const data = await client.fetch<Menu[]>('*[_type == "menu"]');
 	return data;
 }
 
 export async function getHero() {
-	const data = await client.fetch<any>(groq`
+	const data = await client.fetch<
+		Hero & { case_studies: (CaseStudy & { service: { title: string } })[] }
+	>(groq`
 		*[_type == "hero"][0]{
 		...,
 		case_studies[]->{title, service->{title}, thumbnail}
@@ -35,19 +50,19 @@ export async function getHero() {
 }
 
 export async function getAbout() {
-	const data = await client.fetch<any>('*[_type == "about"][0]');
+	const data = await client.fetch<About>('*[_type == "about"][0]');
 	return data;
 }
 
 export async function getServices() {
-	const data = await client.fetch<any>(
+	const data = await client.fetch<Service[]>(
 		'*[_type == "service"]|order(orderRank)'
 	);
 	return data;
 }
 
 export async function getCaseStudies() {
-	const data = await client.fetch<any>('*[_type == "case-study"]');
+	const data = await client.fetch<CaseStudy[]>('*[_type == "case-study"]');
 	return data;
 }
 

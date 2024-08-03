@@ -8,6 +8,7 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
+import { CaseStudy, Service, Hero as HeroType } from '@studio/sanity.types';
 
 export default function Hero({
 	headlines,
@@ -17,10 +18,10 @@ export default function Hero({
 	case_studies,
 }: {
 	headlines: string[];
-	description: any[];
+	description: HeroType['description'];
 	persons: any[];
-	services: any[];
-	case_studies: any[];
+	services: Service[];
+	case_studies: (CaseStudy & { service: { title: string } })[];
 }) {
 	return (
 		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-20">
@@ -77,7 +78,7 @@ export default function Hero({
 			</div>
 
 			<div className="max-w-4xl text-xl leading-loose flex flex-col gap-5">
-				<PortableText value={description} />
+				<PortableText value={description as any} />
 			</div>
 
 			<div className=" w-auto flex flex-col items-start gap-10">
@@ -99,7 +100,11 @@ export default function Hero({
 								<Image
 									alt="Card background"
 									className="object-cover rounded-xl"
-									src={imageToUrl(caseStudy.thumbnail)}
+									src={
+										caseStudy.thumbnail
+											? imageToUrl(caseStudy.thumbnail)
+											: '/placeholder.webp'
+									}
 									width={270}
 								/>
 							</CardBody>

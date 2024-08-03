@@ -1,4 +1,6 @@
-export default function Services({ items }: { items: any[] }) {
+import { Service } from '@studio/sanity.types';
+
+export default function Services({ items }: { items: Service[] }) {
 	return (
 		<div className="services bg-background" id="services">
 			<div className="py-20 flex flex-col gap-y-20 mx-auto" id="services">
