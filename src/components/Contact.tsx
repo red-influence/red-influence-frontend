@@ -13,6 +13,7 @@ export default function Contact() {
 					data-netlify="true"
 					name="contact"
 					method="POST"
+					action="/"
 				>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
 						<Input type="text" label="Vorname" size="lg" />
