@@ -10,7 +10,7 @@ export default function About({
 }) {
 	return (
 		<div
-			className="container py-12 md:py-20 flex flex-col gap-y-20 mx-auto px-5 md:px-0 section"
+			className="container py-12 md:py-20 flex flex-col gap-y-10 mx-auto px-5 md:px-0 section"
 			id="about"
 		>
 			<h2 className="text-3xl md:text-6xl">{title}</h2>

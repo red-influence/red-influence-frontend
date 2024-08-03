@@ -14,7 +14,7 @@ export default function Privacy({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="page-content">
-			<div className="container mx-auto flex flex-col gap-y-20 py-12 md:py-20 px-5 md:px-0">
+			<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
 				<h1 className="text-3xl md:text-6xl">Datenschutzerklärung</h1>
 
 				<div className="max-w-4xl text-xl leading-loose flex flex-col gap-5">
