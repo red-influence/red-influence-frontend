@@ -17,8 +17,10 @@
 				"name": "next"
 			}
 		],
+		"baseUrl": "src/",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/utils/*": ["utils/*"],
+			"@/components/*": ["components/*"]
 		}
 	},
 	"include": [
