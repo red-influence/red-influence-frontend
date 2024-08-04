@@ -19,7 +19,7 @@ export default function Hero({
 }: {
 	headlines: string[];
 	description: HeroType['description'];
-	persons: any[];
+	persons: HeroType['persons'];
 	services: Service[];
 	case_studies: (CaseStudy & { service: { title: string } })[];
 }) {

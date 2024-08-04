@@ -1,3 +1,4 @@
+import { SiteSettings } from '@/types/sanity.types';
 import { getSiteSettings } from '@/utils/sanity';
 import { PortableText } from '@portabletext/react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -6,7 +7,7 @@ export const getStaticProps = (async (context) => {
 	const siteSettings = await getSiteSettings();
 	return { props: { siteSettings } };
 }) satisfies GetStaticProps<{
-	siteSettings: any;
+	siteSettings: SiteSettings;
 }>;
 
 export default function Privacy({

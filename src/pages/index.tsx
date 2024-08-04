@@ -4,6 +4,12 @@ import Hero from '@/components/Hero';
 import Maloum from '@/components/Maloum';
 import Services from '@/components/Services';
 import {
+	About as AboutType,
+	Hero as HeroType,
+	Maloum as MaloumType,
+	Service,
+} from '@/types/sanity.types';
+import {
 	getAbout,
 	getCaseStudies,
 	getHero,
@@ -20,10 +26,10 @@ export const getStaticProps = (async (context) => {
 
 	return { props: { hero, about, services, maloum } };
 }) satisfies GetStaticProps<{
-	hero: any;
-	about: any;
-	services: any;
-	maloum: any;
+	hero: HeroType;
+	about: AboutType;
+	services: Service[];
+	maloum: MaloumType;
 }>;
 
 export default function Home({

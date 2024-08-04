@@ -9,8 +9,8 @@ export default function Footer({
 	menu: Menu;
 }) {
 	return (
-		<div className="banner w-full min-h-32 bg-background">
-			<div className="container mx-auto flex items-center md:justify-between gap-4 h-full p-5 md:px-0 flex-col md:flex-row">
+		<div className="banner w-full bg-background">
+			<div className="container mx-auto flex items-center md:justify-between gap-4 min-h-32 p-5 md:px-0 flex-col md:flex-row">
 				<span>
 					© {new Date().getFullYear()} {copyright}
 				</span>

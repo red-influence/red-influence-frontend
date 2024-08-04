@@ -2,23 +2,26 @@ import { useMemo } from 'react';
 import Navigation from './Navigation';
 import Banner from './Banner';
 import Footer from './Footer';
+import { Menu, Service, SiteSettings } from '@/types/sanity.types';
 
 export default function RootLayout({
 	children,
 	siteSettings,
 	menus,
+	services,
 }: Readonly<{
 	children: React.ReactNode;
-	siteSettings: any;
-	menus: any;
+	siteSettings: SiteSettings;
+	menus: Menu[];
+	services: Service[];
 }>) {
 	const mainMenu = useMemo(
-		() => menus.find((menu: any) => menu.slug.current === 'main-menu'),
+		() => menus.find((menu) => menu.slug.current === 'main-menu'),
 		[menus]
 	);
 
 	const footerMenu = useMemo(
-		() => menus.find((menu: any) => menu.slug.current === 'footer-menu'),
+		() => menus.find((menu) => menu.slug.current === 'footer-menu'),
 		[menus]
 	);
 
@@ -26,12 +29,16 @@ export default function RootLayout({
 		<div id="content">
 			<div className="header fixed top-0 w-full z-50">
 				<Banner />
-				<Navigation title={siteSettings.title} menu={mainMenu} />
+				<Navigation
+					title={siteSettings.title}
+					menu={mainMenu as Menu}
+					services={services}
+				/>
 			</div>
 
 			{children}
 
-			<Footer copyright={siteSettings.title} menu={footerMenu} />
+			<Footer copyright={siteSettings.title} menu={footerMenu as Menu} />
 		</div>
 	);
 }
