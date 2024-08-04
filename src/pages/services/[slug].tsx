@@ -50,7 +50,7 @@ export default function Service({
 					<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
 						<h1 className="text-3xl md:text-6xl">{service.title}</h1>
 
-						<p className="max-w-4xl text-md md:text-xl !leading-loose">
+						<p className="max-w-4xl text-md md:text-xl !leading-loose pb-10">
 							{service.description}
 						</p>
 

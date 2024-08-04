@@ -11,7 +11,7 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 					{items.map((item, index) => (
 						<Card
 							key={index}
-							className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-52 flex flex-col items-center p-6 gap-4"
+							className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-52 flex flex-col items-center p-6 gap-4 max-w-6xl"
 							shadow="none"
 							isBlurred
 						>
