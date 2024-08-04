@@ -19,7 +19,7 @@ export default function Services({ items }: { items: Service[] }) {
 				<div className="flex flex-col gap-y-24">
 					{items.map((service, index) => (
 						<div
-							className="container pt-10 border-t-medium border-t-primary mx-auto grid md:grid-cols-2 gap-12"
+							className="container pt-10 border-t-medium border-t-primary mx-auto grid md:grid-cols-2 gap-12 md:gap-20"
 							key={index}
 						>
 							<div className="flex flex-col gap-y-10 max-w-4xl items-start">
