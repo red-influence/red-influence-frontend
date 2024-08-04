@@ -2,6 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { About as AboutType } from '@/types/sanity.types';
 import { Image } from '@nextui-org/image';
 import { imageToUrl } from '@/utils/sanity';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function About({
 	title,
@@ -18,20 +19,27 @@ export default function About({
 			id="about"
 		>
 			<div className="flex flex-col gap-y-10">
-				<h2 className="text-3xl md:text-6xl">{title}</h2>
-				<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
-					<PortableText value={description as any} />
-				</div>
+				<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<h2 className="text-3xl md:text-6xl">{title}</h2>
+				</ScrollAnimation>
+
+				<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
+						<PortableText value={description as any} />
+					</div>
+				</ScrollAnimation>
 			</div>
 
 			{image && (
 				<div>
-					<Image
-						alt="Location"
-						className="object-cover rounded-xl"
-						src={imageToUrl(image)}
-						width="100%"
-					/>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<Image
+							alt="Location"
+							className="object-cover rounded-xl"
+							src={imageToUrl(image)}
+							width="100%"
+						/>
+					</ScrollAnimation>
 				</div>
 			)}
 		</div>

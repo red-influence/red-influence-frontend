@@ -3,6 +3,7 @@ import { Chip } from '@nextui-org/chip';
 import { Input, Textarea } from '@nextui-org/input';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Contact() {
 	const [status, setStatus] = useState<string>('idle');
@@ -50,8 +51,10 @@ export default function Contact() {
 
 	return (
 		<div className="contact bg-background section" id="contact">
-			<div className="container py-20 flex flex-col gap-y-10 mx-auto items-center px-5 md:px-0">
-				<h2 className="text-3xl md:text-6xl">Kontaktiere uns jetzt</h2>
+			<div className="container py-12 md:py-20 flex flex-col gap-y-10 mx-auto items-center px-5 md:px-0">
+				<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<h2 className="text-3xl md:text-6xl">Kontaktiere uns jetzt</h2>
+				</ScrollAnimation>
 
 				<form
 					className="w-full max-w-6xl flex flex-col gap-10 items-start"
@@ -62,59 +65,81 @@ export default function Contact() {
 					<Input type="hidden" name="form-name" value="contact" />
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-						<Input
-							type="text"
-							label="Vorname"
-							name="vorname"
-							size="lg"
-							required
-						/>
-						<Input
-							type="text"
-							label="Nachname"
-							name="nachname"
-							size="lg"
-							required
-						/>
-						<Input
-							type="email"
-							label="Email"
-							name="email"
+						<ScrollAnimation animateIn="fadeIn" animateOnce>
+							<Input
+								type="text"
+								label="Vorname"
+								name="vorname"
+								size="lg"
+								required
+							/>
+						</ScrollAnimation>
+						<ScrollAnimation animateIn="fadeIn" animateOnce>
+							<Input
+								type="text"
+								label="Nachname"
+								name="nachname"
+								size="lg"
+								required
+							/>
+						</ScrollAnimation>
+						<ScrollAnimation
+							animateIn="fadeIn"
+							animateOnce
 							className="md:col-span-2"
-							size="lg"
-							required
-						/>
+						>
+							<Input
+								type="email"
+								label="Email"
+								name="email"
+								size="lg"
+								required
+							/>
+						</ScrollAnimation>
 
-						<Textarea
-							label="Nachricht"
-							name="nachricht"
+						<ScrollAnimation
+							animateIn="fadeIn"
+							animateOnce
 							className="md:col-span-2"
-							minRows={8}
-							size="lg"
-							required
-						/>
+						>
+							<Textarea
+								label="Nachricht"
+								name="nachricht"
+								minRows={8}
+								size="lg"
+								required
+							/>
+						</ScrollAnimation>
 					</div>
-					<Button type="submit">Nachricht absenden</Button>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<Button type="submit">Nachricht absenden</Button>
+					</ScrollAnimation>
 				</form>
 
 				{status === 'ok' && (
-					<Chip size="lg" color="success">
-						Nachricht erfolgreich zugestellt
-					</Chip>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<Chip size="lg" color="success">
+							Nachricht erfolgreich zugestellt
+						</Chip>
+					</ScrollAnimation>
 				)}
 
 				{status === 'error' && (
-					<Chip size="lg" color="danger">
-						{error}
-					</Chip>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<Chip size="lg" color="danger">
+							{error}
+						</Chip>
+					</ScrollAnimation>
 				)}
 
-				<Link
-					href="mailto:mail@red-influence.com"
-					className="text-md md:text-xl"
-				>
-					Oder einfach per Mail.
-				</Link>
+				<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<Link
+						href="mailto:mail@red-influence.com"
+						className="text-md md:text-xl"
+					>
+						Oder einfach per Mail.
+					</Link>
+				</ScrollAnimation>
 			</div>
 		</div>
 	);

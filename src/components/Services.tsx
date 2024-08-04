@@ -2,6 +2,7 @@ import { Service } from '@/types/sanity.types';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
 import ServiceGrid from './ServiceGrid';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Services({ items }: { items: Service[] }) {
 	return (
@@ -11,7 +12,9 @@ export default function Services({ items }: { items: Service[] }) {
 				id="services"
 			>
 				<div className="container mx-auto">
-					<h2 className="text-3xl md:text-6xl">Leistungen</h2>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<h2 className="text-3xl md:text-6xl">Leistungen</h2>
+					</ScrollAnimation>
 				</div>
 
 				<div className="flex flex-col gap-y-16 md:gap-y-24">
@@ -21,13 +24,21 @@ export default function Services({ items }: { items: Service[] }) {
 							key={index}
 						>
 							<div className="flex flex-col gap-y-10 max-w-4xl items-start">
-								<h3 className="text-2xl md:text-4xl">{service.title}</h3>
-								<p className="text-md md:text-xl !leading-loose">
-									{service.description}
-								</p>
-								<Button as={Link} href={`/services/${service.slug.current}`}>
-									Mehr über {service.title}
-								</Button>
+								<ScrollAnimation animateIn="fadeIn" animateOnce>
+									<h3 className="text-2xl md:text-4xl">{service.title}</h3>
+								</ScrollAnimation>
+
+								<ScrollAnimation animateIn="fadeIn" animateOnce>
+									<p className="text-md md:text-xl !leading-loose">
+										{service.description}
+									</p>
+								</ScrollAnimation>
+
+								<ScrollAnimation animateIn="fadeIn" animateOnce>
+									<Button as={Link} href={`/services/${service.slug.current}`}>
+										Mehr über {service.title}
+									</Button>
+								</ScrollAnimation>
 							</div>
 
 							<ServiceGrid items={service.grid} />

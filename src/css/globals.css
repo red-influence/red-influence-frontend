@@ -63,7 +63,12 @@ main {
 	@apply text-background;
 }
 
-.maloum .service-grid > div {
+.maloum .service-grid .animated > div {
 	@apply bg-background/5;
 	color: #f33801;
+}
+
+.animated {
+	-webkit-animation-fill-mode: none !important;
+	animation-fill-mode: none !important;
 }

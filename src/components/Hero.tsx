@@ -1,7 +1,4 @@
-import { Button } from '@nextui-org/button';
-import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Chip } from '@nextui-org/chip';
-import { Image } from '@nextui-org/image';
 import { User } from '@nextui-org/user';
 import Link from 'next/link';
 import { Autoplay } from 'swiper/modules';
@@ -10,6 +7,7 @@ import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
 import { CaseStudy, Service, Hero as HeroType } from '@/types/sanity.types';
 import CaseStudiesGrid from './CaseStudiesGrid';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Hero({
 	headlines,
@@ -59,32 +57,38 @@ export default function Hero({
 					))}
 				</div>
 
-				<div className=" flex gap-y-5 gap-x-10 flex-wrap pt-5 md:pt-0">
-					{persons.map((person, index) => (
-						<User
-							key={index}
-							name={person.name}
-							description={
-								<Link
-									href={`https://instagram.com/${person.instagram}`}
-									target="_blank"
-								>
-									@{person.instagram}
-								</Link>
-							}
-							avatarProps={{
-								src: imageToUrl(person.image),
-							}}
-						/>
-					))}
+				<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<div className=" flex gap-y-5 gap-x-10 flex-wrap pt-5 md:pt-0">
+						{persons.map((person, index) => (
+							<User
+								key={index}
+								name={person.name}
+								description={
+									<Link
+										href={`https://instagram.com/${person.instagram}`}
+										target="_blank"
+									>
+										@{person.instagram}
+									</Link>
+								}
+								avatarProps={{
+									src: imageToUrl(person.image),
+								}}
+							/>
+						))}
+					</div>
+				</ScrollAnimation>
+			</div>
+
+			<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
+					<PortableText value={description as any} />
 				</div>
-			</div>
+			</ScrollAnimation>
 
-			<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
-				<PortableText value={description as any} />
-			</div>
-
-			<CaseStudiesGrid items={case_studies} showAllButton />
+			<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<CaseStudiesGrid items={case_studies} showAllButton />
+			</ScrollAnimation>
 		</div>
 	);
 }

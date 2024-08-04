@@ -5,6 +5,7 @@ import { Image } from '@nextui-org/image';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export const getStaticPaths = (async () => {
 	const caseStudies = await getCaseStudies();
@@ -48,24 +49,30 @@ export default function Service({
 			{caseStudy ? (
 				<div className="page-content">
 					<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
-						<h2 className="text-3xl md:text-6xl">{caseStudy.title}</h2>
+						<ScrollAnimation animateIn="fadeIn" animateOnce>
+							<h2 className="text-3xl md:text-6xl">{caseStudy.title}</h2>
+						</ScrollAnimation>
 						<div className="grid md:grid-flow-col gap-12 md:gap-20 items-center">
 							{caseStudy.description && (
-								<div className="flex flex-col gap-y-10">
-									<p className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
-										{caseStudy.description}
-									</p>
-								</div>
+								<ScrollAnimation animateIn="fadeIn" animateOnce>
+									<div className="flex flex-col gap-y-10">
+										<p className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
+											{caseStudy.description}
+										</p>
+									</div>
+								</ScrollAnimation>
 							)}
 
 							{caseStudy.thumbnail && (
 								<div>
-									<Image
-										alt="Location"
-										className="object-cover rounded-xl max-w-4xl max-h-screen"
-										src={imageToUrl(caseStudy.thumbnail)}
-										width="100%"
-									/>
+									<ScrollAnimation animateIn="fadeIn" animateOnce>
+										<Image
+											alt="Location"
+											className="object-cover rounded-xl max-w-4xl max-h-screen"
+											src={imageToUrl(caseStudy.thumbnail)}
+											width="100%"
+										/>
+									</ScrollAnimation>
 								</div>
 							)}
 						</div>
