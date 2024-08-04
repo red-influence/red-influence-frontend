@@ -18,7 +18,7 @@ export default function Maloum({
 }) {
 	return (
 		<div className="bg-background section">
-			<div className="container py-12 md:py-20 mx-auto section" id="maloum">
+			<div className="container md:py-20 mx-auto section" id="maloum">
 				<div
 					className="maloum max-w-6xl flex flex-col gap-y-5 md:gap-y-10 mx-auto p-5 py-16 md:p-16 md:rounded-3xl"
 					id="maloum"
