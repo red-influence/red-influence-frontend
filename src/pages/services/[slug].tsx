@@ -53,7 +53,7 @@ export default function Service({
 						</p>
 
 						{service.grid && (
-							<div className="grid grid-cols-2 gap-3 md:gap-6 items-start justify-start md:flex flex-wrap">
+							<div className="grid grid-cols-2 gap-3 md:gap-6 items-start justify-start md:flex flex-wrap max-w-4xl pt-10">
 								{service.grid.map((item, index) => (
 									<Card
 										key={index}
