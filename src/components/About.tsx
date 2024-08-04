@@ -10,7 +10,7 @@ export default function About({
 }: {
 	title: string;
 	description: AboutType['description'];
-	image: AboutType['image'];
+	image?: AboutType['image'];
 }) {
 	return (
 		<div

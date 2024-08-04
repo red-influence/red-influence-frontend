@@ -14,7 +14,7 @@ export default function Maloum({
 	title: string;
 	description: Maloumtype['description'];
 	logo: Maloumtype['logo'];
-	grid: Maloumtype['grid'];
+	grid?: Maloumtype['grid'];
 }) {
 	return (
 		<div className="bg-background section">
