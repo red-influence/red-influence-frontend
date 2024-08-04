@@ -14,7 +14,7 @@ export default function Services({ items }: { items: Service[] }) {
 					<h2 className="text-3xl md:text-6xl">Leistungen</h2>
 				</div>
 
-				<div className="flex flex-col gap-y-24">
+				<div className="flex flex-col gap-y-16 md:gap-y-24">
 					{items.map((service, index) => (
 						<div
 							className="container pt-10 border-t-medium border-t-primary mx-auto grid md:grid-cols-2 gap-12 md:gap-20"
