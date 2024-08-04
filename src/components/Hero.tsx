@@ -100,7 +100,7 @@ export default function Hero({
 							</CardHeader>
 							<CardBody className="overflow-visible py-2">
 								<Image
-									alt="Card background"
+									alt={`${caseStudy.title} Case Study`}
 									className="object-cover rounded-xl"
 									src={
 										caseStudy.thumbnail

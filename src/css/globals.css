@@ -57,3 +57,12 @@ main {
 .header header {
 	@apply px-5;
 }
+
+.maloum {
+	background-color: #f6f4ee;
+	@apply text-background;
+}
+
+.maloum h2 {
+	color: #f33801;
+}

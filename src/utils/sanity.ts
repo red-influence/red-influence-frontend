@@ -4,6 +4,18 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import groq from 'groq';
 
+import {
+	SanityImageAsset,
+	CaseStudy,
+	Service,
+	About,
+	Hero,
+	Menu,
+	SiteSettings,
+	internalGroqTypeReferenceTo,
+	Maloum,
+} from '@/types/sanity.types';
+
 export const client = createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 	dataset: 'production',
@@ -14,16 +26,9 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(client);
 
-import {
-	SanityImageAsset,
-	CaseStudy,
-	Service,
-	About,
-	Hero,
-	Menu,
-	SiteSettings,
-	internalGroqTypeReferenceTo,
-} from '@/types/sanity.types';
+export function imageToUrl(source: any): string {
+	return String(builder.image(source));
+}
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getSiteSettings() {
@@ -66,6 +71,7 @@ export async function getCaseStudies() {
 	return data;
 }
 
-export function imageToUrl(source: any): string {
-	return String(builder.image(source));
+export async function getMaloum() {
+	const data = await client.fetch<Maloum>('*[_type == "maloum"][0]');
+	return data;
 }
