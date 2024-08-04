@@ -58,7 +58,7 @@ export default function Hero({
 					))}
 				</div>
 
-				<div className=" flex gap-10 flex-wrap">
+				<div className=" flex gap-y-5 gap-x-10 flex-wrap pt-5 md:pt-0">
 					{persons.map((person, index) => (
 						<User
 							key={index}
