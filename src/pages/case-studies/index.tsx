@@ -1,21 +1,24 @@
-import { SiteSettings } from '@/types/sanity.types';
-import { getSiteSettings } from '@/utils/sanity';
+import CaseStudiesGrid from '@/components/CaseStudiesGrid';
+import { CaseStudy, SiteSettings } from '@/types/sanity.types';
+import { getCaseStudies, getSiteSettings } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 export const getStaticProps = (async (context) => {
-	const siteSettings = await getSiteSettings();
-	return { props: { siteSettings } };
+	const caseStudies = await getCaseStudies();
+	return { props: { caseStudies } };
 }) satisfies GetStaticProps<{
-	siteSettings: SiteSettings;
+	caseStudies: (CaseStudy & { service: { title: string } })[];
 }>;
 
 export default function CaseStudies({
-	siteSettings,
+	caseStudies,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="page-content">
 			<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
 				<h1 className="text-3xl md:text-6xl">Case Studies</h1>
+
+				<CaseStudiesGrid items={caseStudies} />
 			</div>
 		</div>
 	);

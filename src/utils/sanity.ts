@@ -49,7 +49,7 @@ export async function getHero() {
 	>(groq`
 		*[_type == "hero"][0]{
 		...,
-		case_studies[]->{title, service->{title}, thumbnail}
+		case_studies[]->{..., service->{title}}
 	}`);
 	return data;
 }
@@ -67,7 +67,9 @@ export async function getServices() {
 }
 
 export async function getCaseStudies() {
-	const data = await client.fetch<CaseStudy[]>('*[_type == "case-study"]');
+	const data = await client.fetch<
+		(CaseStudy & { service: { title: string } })[]
+	>('*[_type == "case-study"]{..., service->{title}}');
 	return data;
 }
 

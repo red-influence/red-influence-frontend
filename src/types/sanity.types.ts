@@ -189,7 +189,7 @@ export type CaseStudy = {
   _updatedAt: string
   _rev: string
   title: string
-  slug?: Slug
+  slug: Slug
   service: {
     _ref: string
     _type: 'reference'

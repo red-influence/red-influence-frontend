@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
 import { CaseStudy, Service, Hero as HeroType } from '@/types/sanity.types';
+import CaseStudiesGrid from './CaseStudiesGrid';
 
 export default function Hero({
 	headlines,
@@ -83,41 +84,7 @@ export default function Hero({
 				<PortableText value={description as any} />
 			</div>
 
-			<div className=" w-auto flex flex-col items-start gap-10">
-				<div className="flex gap-10 flex-wrap">
-					{case_studies.map((caseStudy, index) => (
-						<Card
-							key={index}
-							className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-80"
-							shadow="none"
-							isBlurred
-						>
-							<CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-								<small className="text-default-500">
-									{caseStudy.service.title}
-								</small>
-								<h4 className="font-bold text-large">{caseStudy.title}</h4>
-							</CardHeader>
-							<CardBody className="overflow-visible py-2">
-								<Image
-									alt={`${caseStudy.title} Case Study`}
-									className="object-cover rounded-xl"
-									src={
-										caseStudy.thumbnail
-											? imageToUrl(caseStudy.thumbnail)
-											: '/placeholder.webp'
-									}
-									width="100%"
-								/>
-							</CardBody>
-						</Card>
-					))}
-				</div>
-
-				<Button as={Link} href="/case-studies">
-					Alle Case Studies ansehen
-				</Button>
-			</div>
+			<CaseStudiesGrid items={case_studies} showAllButton />
 		</div>
 	);
 }
