@@ -19,7 +19,7 @@ export default function Services({ items }: { items: Service[] }) {
 						>
 							<div className="flex flex-col gap-y-10 max-w-4xl">
 								<h3 className="text-2xl md:text-4xl">{service.title}</h3>
-								<p className="text-md md:text-xl leading-loose">
+								<p className="text-md md:text-xl !leading-loose">
 									{service.description}
 								</p>
 							</div>
