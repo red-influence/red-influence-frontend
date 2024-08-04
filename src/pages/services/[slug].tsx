@@ -1,6 +1,8 @@
 import Error404 from '@/components/Error404';
 import { Service as ServiceType } from '@/types/sanity.types';
-import { getServices } from '@/utils/sanity';
+import { getServices, imageToUrl } from '@/utils/sanity';
+import { Card } from '@nextui-org/card';
+import { Image } from '@nextui-org/image';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
@@ -49,6 +51,27 @@ export default function Service({
 						<p className="max-w-4xl text-md md:text-xl !leading-loose">
 							{service.description}
 						</p>
+
+						{service.grid && (
+							<div className="grid grid-cols-2 gap-3 md:gap-6 items-start justify-start md:flex flex-wrap">
+								{service.grid.map((item, index) => (
+									<Card
+										key={index}
+										className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-52 flex flex-col items-center p-6 gap-4"
+										shadow="none"
+										isBlurred
+									>
+										<Image
+											alt={item.title}
+											className="object-cover rounded-xl"
+											src={imageToUrl(item.icon)}
+											width="100%"
+										/>
+										<h4 className="text-lg md:text-x">{item.title}</h4>
+									</Card>
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			) : (

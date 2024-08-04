@@ -1,5 +1,8 @@
 import { Service } from '@/types/sanity.types';
+import { imageToUrl } from '@/utils/sanity';
 import { Button } from '@nextui-org/button';
+import { Card } from '@nextui-org/card';
+import { Image } from '@nextui-org/image';
 import Link from 'next/link';
 
 export default function Services({ items }: { items: Service[] }) {
@@ -16,7 +19,7 @@ export default function Services({ items }: { items: Service[] }) {
 				<div className="flex flex-col gap-y-24">
 					{items.map((service, index) => (
 						<div
-							className="container pt-10 border-t-medium border-t-primary mx-auto"
+							className="container pt-10 border-t-medium border-t-primary mx-auto grid md:grid-cols-2 gap-12"
 							key={index}
 						>
 							<div className="flex flex-col gap-y-10 max-w-4xl items-start">
@@ -28,6 +31,27 @@ export default function Services({ items }: { items: Service[] }) {
 									Mehr über {service.title} erfahren
 								</Button>
 							</div>
+
+							{service.grid && (
+								<div className="grid grid-cols-2 gap-3 md:gap-6 items-start justify-start md:flex flex-wrap">
+									{service.grid.map((item, index) => (
+										<Card
+											key={index}
+											className="py-4 bg-background/60 dark:bg-default-100/50 w-full md:max-w-52 flex flex-col items-center p-6 gap-4"
+											shadow="none"
+											isBlurred
+										>
+											<Image
+												alt={item.title}
+												className="object-cover rounded-xl"
+												src={imageToUrl(item.icon)}
+												width="100%"
+											/>
+											<h4 className="text-lg md:text-x">{item.title}</h4>
+										</Card>
+									))}
+								</div>
+							)}
 						</div>
 					))}
 				</div>
