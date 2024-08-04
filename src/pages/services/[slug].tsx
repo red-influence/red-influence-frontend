@@ -37,7 +37,10 @@ export default function Service({
 	const { slug } = router.query;
 
 	const service = useMemo(
-		() => services.find((service) => service.slug.current === slug),
+		() =>
+			services
+				? services.find((service) => service.slug.current === slug)
+				: undefined,
 		[slug, services]
 	);
 
