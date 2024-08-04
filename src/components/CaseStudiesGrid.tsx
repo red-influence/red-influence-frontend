@@ -39,7 +39,8 @@ export default function CaseStudiesGrid({
 											? imageToUrl(item.thumbnail)
 											: '/placeholder.webp'
 									}
-									width="100%"
+									width={400}
+									height={200}
 								/>
 							</CardBody>
 						</Card>

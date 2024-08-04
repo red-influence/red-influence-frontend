@@ -62,7 +62,7 @@ export default function Service({
 								<div>
 									<Image
 										alt="Location"
-										className="object-cover rounded-xl max-w-4xl"
+										className="object-cover rounded-xl max-w-4xl max-h-screen"
 										src={imageToUrl(caseStudy.thumbnail)}
 										width="100%"
 									/>
