@@ -24,8 +24,8 @@ export default function Hero({
 	case_studies: (CaseStudy & { service: { title: string } })[];
 }) {
 	return (
-		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-28 py-12 md:py-20 px-5 md:px-0">
-			<div className="flex flex-col gap-y-10 max-w-6xl">
+		<div className="hero container mx-auto min-h-96 flex justify-center flex-col gap-y-16 md:gap-y-28 py-12 md:py-20 px-5 md:px-0">
+			<div className="flex flex-col gap-y-5 md:gap-y-10 max-w-6xl">
 				<small className="text-3xl md:text-4xl text-primary">
 					red influence
 				</small>

@@ -7,7 +7,7 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 	return (
 		<>
 			{items && (
-				<div className="grid grid-cols-2 gap-3 md:gap-6 justify-start md:flex flex-wrap h-max">
+				<div className="service-grid grid grid-cols-2 gap-3 md:gap-6 justify-start md:flex flex-wrap h-max">
 					{items.map((item, index) => (
 						<Card
 							key={index}
@@ -21,7 +21,7 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 								src={imageToUrl(item.icon)}
 								width={10000}
 							/>
-							<h4 className="text-lg md:text-x text-center">{item.title}</h4>
+							<h4 className="text-md md:text-lg text-center">{item.title}</h4>
 						</Card>
 					))}
 				</div>

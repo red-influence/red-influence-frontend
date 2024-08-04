@@ -104,6 +104,21 @@ export type Maloum = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  grid?: Array<{
+    title: string
+    icon: {
+      asset?: {
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+      }
+      hotspot?: SanityImageHotspot
+      crop?: SanityImageCrop
+      _type: 'image'
+    }
+    _key: string
+  }>
 }
 
 export type SiteSettings = {

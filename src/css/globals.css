@@ -63,6 +63,7 @@ main {
 	@apply text-background;
 }
 
-.maloum h2 {
+.maloum .service-grid > div {
+	@apply bg-background/5;
 	color: #f33801;
 }
