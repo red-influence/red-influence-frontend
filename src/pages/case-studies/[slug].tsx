@@ -49,10 +49,7 @@ export default function Service({
 				<div className="page-content">
 					<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
 						<h2 className="text-3xl md:text-6xl">{caseStudy.title}</h2>
-						<div
-							className="container mx-auto px-5 md:px-0 section grid md:grid-flow-col gap-12 md:gap-20 items-center"
-							id="about"
-						>
+						<div className="mx-auto grid md:grid-flow-col gap-12 md:gap-20 items-center">
 							{caseStudy.description && (
 								<div className="flex flex-col gap-y-10">
 									<p className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
