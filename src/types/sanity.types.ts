@@ -205,8 +205,8 @@ export type Service = {
   slug: Slug
   description: string
   grid?: Array<{
-    title?: string
-    icon?: {
+    title: string
+    icon: {
       asset?: {
         _ref: string
         _type: 'reference'

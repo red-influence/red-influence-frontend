@@ -26,7 +26,7 @@ export default function Services({ items }: { items: Service[] }) {
 									{service.description}
 								</p>
 								<Button as={Link} href={`/services/${service.slug.current}`}>
-									Mehr über {service.title} erfahren
+									Mehr über {service.title}
 								</Button>
 							</div>
 
