@@ -35,7 +35,11 @@ export default function Services({ items }: { items: Service[] }) {
 								</ScrollAnimation>
 
 								<ScrollAnimation animateIn="fadeIn" animateOnce>
-									<Button as={Link} href={`/services/${service.slug.current}`}>
+									<Button
+										as={Link}
+										href={`/services/${service.slug.current}`}
+										target="_blank"
+									>
 										Mehr über {service.title}
 									</Button>
 								</ScrollAnimation>
