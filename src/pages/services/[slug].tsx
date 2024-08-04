@@ -38,7 +38,7 @@ export default function Service({
 
 	const service = useMemo(
 		() => services.find((service) => service.slug.current === slug),
-		[slug]
+		[slug, services]
 	);
 
 	return (
