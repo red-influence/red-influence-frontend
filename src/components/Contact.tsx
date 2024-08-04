@@ -109,7 +109,10 @@ export default function Contact() {
 					</Chip>
 				)}
 
-				<Link href="mailto:mail@red-influence.com" className="text-xl">
+				<Link
+					href="mailto:mail@red-influence.com"
+					className="text-md md:text-xl"
+				>
 					Oder einfach per Mail.
 				</Link>
 			</div>

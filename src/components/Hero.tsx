@@ -79,7 +79,7 @@ export default function Hero({
 				</div>
 			</div>
 
-			<div className="max-w-4xl text-xl leading-loose flex flex-col gap-5">
+			<div className="max-w-4xl text-md md:text-xl leading-loose flex flex-col gap-5">
 				<PortableText value={description as any} />
 			</div>
 
