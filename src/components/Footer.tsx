@@ -10,7 +10,7 @@ export default function Footer({
 }) {
 	return (
 		<div className="banner w-full bg-background">
-			<div className="container mx-auto flex items-center md:justify-between gap-4 min-h-32 p-5 md:px-0 flex-col md:flex-row">
+			<div className="container mx-auto flex items-center md:justify-between gap-4 min-h-32 p-5 md:px-0 flex-col md:flex-row justify-center">
 				<span>
 					© {new Date().getFullYear()} {copyright}
 				</span>
