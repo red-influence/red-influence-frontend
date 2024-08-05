@@ -2,6 +2,7 @@ import Error404 from '@/components/Error404';
 import { CaseStudy } from '@/types/sanity.types';
 import { getCaseStudies, imageToUrl } from '@/utils/sanity';
 import { Image } from '@nextui-org/image';
+import { PortableText } from '@portabletext/react';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
@@ -55,9 +56,9 @@ export default function Service({
 						{caseStudy.description && (
 							<ScrollAnimation animateIn="fadeIn" animateOnce>
 								<div className="flex flex-col gap-y-10">
-									<p className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
-										{caseStudy.description}
-									</p>
+									<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
+										<PortableText value={caseStudy.description as any} />
+									</div>
 								</div>
 							</ScrollAnimation>
 						)}

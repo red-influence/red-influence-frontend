@@ -5,6 +5,8 @@ import ServiceGrid from './ServiceGrid';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Services({ items }: { items: Service[] }) {
+	console.log(items);
+
 	return (
 		<div className="services bg-background px-5 md:px-0 section" id="services">
 			<div
@@ -30,7 +32,7 @@ export default function Services({ items }: { items: Service[] }) {
 
 								<ScrollAnimation animateIn="fadeIn" animateOnce>
 									<p className="text-md md:text-xl !leading-loose">
-										{service.description}
+										{service.teaser}
 									</p>
 								</ScrollAnimation>
 

@@ -2,6 +2,7 @@ import Error404 from '@/components/Error404';
 import ServiceGrid from '@/components/ServiceGrid';
 import { Service as ServiceType } from '@/types/sanity.types';
 import { getServices } from '@/utils/sanity';
+import { PortableText } from '@portabletext/react';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
@@ -53,9 +54,15 @@ export default function Service({
 					</ScrollAnimation>
 
 					<ScrollAnimation animateIn="fadeIn" animateOnce>
-						<p className="max-w-4xl text-md md:text-xl !leading-loose pb-0 md:pb-10">
-							{service.description}
-						</p>
+						{service.description ? (
+							<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
+								<PortableText value={service.description as any} />
+							</div>
+						) : (
+							<p className="max-w-4xl text-md md:text-xl !leading-loose pb-0 md:pb-10">
+								{service.teaser}
+							</p>
+						)}
 					</ScrollAnimation>
 
 					<ServiceGrid items={service.grid} />
