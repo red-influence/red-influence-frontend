@@ -29,7 +29,7 @@ export default function Services({ items }: { items: Service[] }) {
 								</ScrollAnimation>
 
 								<ScrollAnimation>
-									<p className="text-md md:text-xl !leading-loose">
+									<p className="text-medium md:text-xl !leading-loose">
 										{service.teaser}
 									</p>
 								</ScrollAnimation>

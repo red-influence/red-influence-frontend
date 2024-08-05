@@ -148,7 +148,7 @@ export default function Contact() {
 				<ScrollAnimation>
 					<Link
 						href="mailto:mail@red-influence.com"
-						className="text-md md:text-xl"
+						className="text-medium md:text-xl"
 					>
 						Oder einfach per Mail.
 					</Link>

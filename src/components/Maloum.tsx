@@ -40,7 +40,7 @@ export default function Maloum({
 						</ScrollAnimation>
 
 						<ScrollAnimation>
-							<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
+							<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 pb-5 portable-text">
 								<PortableText value={description as any} />
 							</div>
 						</ScrollAnimation>

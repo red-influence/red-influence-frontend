@@ -79,7 +79,7 @@ export default function Hero({
 			</div>
 
 			<ScrollAnimation>
-				<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
+				<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 portable-text">
 					<PortableText value={description as any} />
 				</div>
 			</ScrollAnimation>

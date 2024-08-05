@@ -22,7 +22,9 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 									src={imageToUrl(item.icon).width(500).url()}
 									width={500}
 								/>
-								<h4 className="text-md md:text-lg text-center">{item.title}</h4>
+								<h4 className="text-medium md:text-lg text-center">
+									{item.title}
+								</h4>
 							</Card>
 						</ScrollAnimation>
 					))}

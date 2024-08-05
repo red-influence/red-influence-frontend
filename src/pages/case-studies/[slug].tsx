@@ -56,7 +56,7 @@ export default function Service({
 						{caseStudy.description && (
 							<ScrollAnimation>
 								<div className="flex flex-col gap-y-10">
-									<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
+									<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 pb-5 portable-text">
 										<PortableText value={caseStudy.description as any} />
 									</div>
 								</div>

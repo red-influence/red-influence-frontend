@@ -28,7 +28,7 @@ export default function About({
 					</ScrollAnimation>
 
 					<ScrollAnimation>
-						<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
+						<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 portable-text">
 							<PortableText value={description as any} />
 						</div>
 					</ScrollAnimation>
@@ -72,12 +72,12 @@ export default function About({
 											<h3 className="text-lg md:text-xl text-center md:text-left">
 												{person.title}
 											</h3>
-											<h4 className="text-sm md:text-md text-center md:text-left">
+											<h4 className="text-sm md:text-medium text-center md:text-left">
 												{person.position}
 											</h4>
 										</div>
 
-										<p className="text-md md:text-lg !leading-loose flex flex-col gap-y-7 md:pe-5 text-center md:text-left">
+										<p className="text-medium md:text-lg !leading-loose flex flex-col gap-y-7 md:pe-5 text-center md:text-left">
 											{person.description}
 										</p>
 									</div>

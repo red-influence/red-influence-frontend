@@ -72,3 +72,19 @@ main {
 	-webkit-animation-fill-mode: none !important;
 	animation-fill-mode: none !important;
 }
+
+.portable-text ul {
+	@apply list-disc ms-4;
+}
+
+.portable-text a {
+	@apply hover:underline;
+}
+
+.portable-text h2 {
+	@apply text-2xl md:text-4xl;
+}
+
+.portable-text h3 {
+	@apply text-xl md:text-2xl;
+}
