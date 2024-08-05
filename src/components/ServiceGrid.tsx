@@ -23,9 +23,9 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 									width={500}
 									loading="lazy"
 								/>
-								<h4 className="text-medium md:text-lg text-center">
+								<span className="text-medium md:text-lg text-center">
 									{item.title}
-								</h4>
+								</span>
 							</Card>
 						</ScrollAnimation>
 					))}

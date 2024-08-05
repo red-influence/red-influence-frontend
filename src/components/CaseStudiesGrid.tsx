@@ -28,7 +28,7 @@ export default function CaseStudiesGrid({
 						>
 							<CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
 								<small className="text-default-500">{item.service.title}</small>
-								<h4 className="font-bold text-large">{item.title}</h4>
+								<h3 className="font-bold text-large">{item.title}</h3>
 							</CardHeader>
 							<CardBody className="overflow-visible py-2">
 								<Image
