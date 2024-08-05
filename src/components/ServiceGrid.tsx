@@ -19,7 +19,11 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 								<Image
 									alt={item.title}
 									className="rounded-xl"
-									src={imageToUrl(item.icon).width(500).auto('format').url()}
+									src={imageToUrl(item.icon)
+										.width(500)
+										.auto('format')
+										.quality(70)
+										.url()}
 									width={500}
 									loading="lazy"
 								/>

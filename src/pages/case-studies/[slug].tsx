@@ -72,6 +72,7 @@ export default function Service({
 										src={imageToUrl(caseStudy.thumbnail)
 											.width(1000)
 											.auto('format')
+											.quality(70)
 											.url()}
 										width={'100%'}
 									/>

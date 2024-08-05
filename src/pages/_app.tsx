@@ -42,6 +42,8 @@ export default function MyApp({
 			<Head>
 				<title>{siteSettings.title}</title>
 				<meta name="description" content={siteSettings.description} />
+				<link rel="preconnect" href="https://cdn.sanity.io" />
+				<link rel="dns-prefetch" href="https://cdn.sanity.io" />
 			</Head>
 
 			<main className={rubik.className}>

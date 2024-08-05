@@ -40,7 +40,11 @@ export default function About({
 							<Image
 								alt="Location"
 								className="object-cover rounded-xl"
-								src={imageToUrl(image).width(500).auto('format').url()}
+								src={imageToUrl(image)
+									.width(500)
+									.auto('format')
+									.quality(70)
+									.url()}
 								width="100%"
 								loading="lazy"
 							/>

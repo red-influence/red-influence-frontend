@@ -39,12 +39,12 @@ export default function CaseStudiesGrid({
 											? imageToUrl(item.thumbnail)
 													.width(400)
 													.auto('format')
+													.quality(70)
 													.url()
 											: '/placeholder.webp'
 									}
 									width={400}
 									height={200}
-									loading="lazy"
 								/>
 							</CardBody>
 						</Card>
