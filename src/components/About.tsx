@@ -48,15 +48,11 @@ export default function About({
 				)}
 			</div>
 
-			<ScrollAnimation>
-				<div className="flex gap-3 md:gap-6 flex-wrap">
-					{persons.map((person, index) =>
-						person.description ? (
-							<PersonBox person={person} key={index} />
-						) : null
-					)}
-				</div>
-			</ScrollAnimation>
+			<div className="flex gap-3 md:gap-6 flex-wrap">
+				{persons.map((person, index) =>
+					person.description ? <PersonBox person={person} key={index} /> : null
+				)}
+			</div>
 		</div>
 	);
 }
