@@ -62,7 +62,7 @@ export default function About({
 									<Image
 										alt={person.title}
 										className="object-cover rounded-xl max-w-52"
-										src={imageToUrl(person.image).width(200).url()}
+										src={imageToUrl(person.image).height(500).url()}
 										width={200}
 										height={250}
 									/>
