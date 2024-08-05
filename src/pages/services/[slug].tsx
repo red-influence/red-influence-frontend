@@ -45,26 +45,24 @@ export default function Service({
 	);
 
 	return (
-		<>
+		<div className="page-content">
 			{service ? (
-				<div className="page-content">
-					<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
-							<h1 className="text-3xl md:text-6xl">{service.title}</h1>
-						</ScrollAnimation>
+				<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<h1 className="text-3xl md:text-6xl">{service.title}</h1>
+					</ScrollAnimation>
 
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
-							<p className="max-w-4xl text-md md:text-xl !leading-loose pb-0 md:pb-10">
-								{service.description}
-							</p>
-						</ScrollAnimation>
+					<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<p className="max-w-4xl text-md md:text-xl !leading-loose pb-0 md:pb-10">
+							{service.description}
+						</p>
+					</ScrollAnimation>
 
-						<ServiceGrid items={service.grid} />
-					</div>
+					<ServiceGrid items={service.grid} />
 				</div>
 			) : (
 				<Error404 />
 			)}
-		</>
+		</div>
 	);
 }
