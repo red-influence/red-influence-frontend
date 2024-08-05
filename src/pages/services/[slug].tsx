@@ -6,7 +6,7 @@ import { PortableText } from '@portabletext/react';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export const getStaticPaths = (async () => {
 	const services = await getServices();
@@ -49,11 +49,11 @@ export default function Service({
 		<div className="page-content">
 			{service ? (
 				<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						<h1 className="text-3xl md:text-6xl">{service.title}</h1>
 					</ScrollAnimation>
 
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						{service.description ? (
 							<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
 								<PortableText value={service.description as any} />

@@ -2,7 +2,7 @@ import CaseStudiesGrid from '@/components/CaseStudiesGrid';
 import { CaseStudy, SiteSettings } from '@/types/sanity.types';
 import { getCaseStudies, getSiteSettings } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export const getStaticProps = (async (context) => {
 	const caseStudies = await getCaseStudies();
@@ -17,11 +17,11 @@ export default function CaseStudies({
 	return (
 		<div className="page-content">
 			<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<h1 className="text-3xl md:text-6xl">Case Studies</h1>
 				</ScrollAnimation>
 
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<CaseStudiesGrid items={caseStudies} />
 				</ScrollAnimation>
 			</div>

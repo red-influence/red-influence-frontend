@@ -3,7 +3,7 @@ import { Chip } from '@nextui-org/chip';
 import { Input, Textarea } from '@nextui-org/input';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export default function Contact() {
 	const [status, setStatus] = useState<string>('idle');
@@ -52,7 +52,7 @@ export default function Contact() {
 	return (
 		<div className="contact bg-background section" id="contact">
 			<div className="container py-12 md:py-20 flex flex-col gap-y-10 mx-auto items-center px-5 md:px-0">
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<h2 className="text-3xl md:text-6xl">Kontaktiere uns jetzt</h2>
 				</ScrollAnimation>
 
@@ -65,7 +65,7 @@ export default function Contact() {
 					<Input type="hidden" name="form-name" value="contact" />
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<ScrollAnimation>
 							<Input
 								type="text"
 								label="Vorname"
@@ -74,7 +74,7 @@ export default function Contact() {
 								required
 							/>
 						</ScrollAnimation>
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<ScrollAnimation>
 							<Input
 								type="text"
 								label="Nachname"
@@ -83,11 +83,7 @@ export default function Contact() {
 								required
 							/>
 						</ScrollAnimation>
-						<ScrollAnimation
-							animateIn="fadeIn"
-							animateOnce
-							className="md:col-span-2"
-						>
+						<ScrollAnimation className="md:col-span-2">
 							<Input
 								type="email"
 								label="Email"
@@ -97,11 +93,7 @@ export default function Contact() {
 							/>
 						</ScrollAnimation>
 
-						<ScrollAnimation
-							animateIn="fadeIn"
-							animateOnce
-							className="md:col-span-2"
-						>
+						<ScrollAnimation className="md:col-span-2">
 							<Textarea
 								label="Nachricht"
 								name="nachricht"
@@ -111,13 +103,13 @@ export default function Contact() {
 							/>
 						</ScrollAnimation>
 					</div>
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						<Button type="submit">Nachricht absenden</Button>
 					</ScrollAnimation>
 				</form>
 
 				{status === 'ok' && (
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						<Chip size="lg" color="success">
 							Nachricht erfolgreich zugestellt
 						</Chip>
@@ -125,14 +117,14 @@ export default function Contact() {
 				)}
 
 				{status === 'error' && (
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						<Chip size="lg" color="danger">
 							{error}
 						</Chip>
 					</ScrollAnimation>
 				)}
 
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<Link
 						href="mailto:mail@red-influence.com"
 						className="text-md md:text-xl"

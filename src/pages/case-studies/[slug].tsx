@@ -6,7 +6,7 @@ import { PortableText } from '@portabletext/react';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export const getStaticPaths = (async () => {
 	const caseStudies = await getCaseStudies();
@@ -49,12 +49,12 @@ export default function Service({
 		<div className="page-content">
 			{caseStudy ? (
 				<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
-					<ScrollAnimation animateIn="fadeIn" animateOnce>
+					<ScrollAnimation>
 						<h2 className="text-3xl md:text-6xl">{caseStudy.title}</h2>
 					</ScrollAnimation>
 					<div className="grid md:grid-flow-col gap-12 md:gap-20 items-center">
 						{caseStudy.description && (
-							<ScrollAnimation animateIn="fadeIn" animateOnce>
+							<ScrollAnimation>
 								<div className="flex flex-col gap-y-10">
 									<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
 										<PortableText value={caseStudy.description as any} />
@@ -65,7 +65,7 @@ export default function Service({
 
 						{caseStudy.thumbnail && (
 							<div>
-								<ScrollAnimation animateIn="fadeIn" animateOnce>
+								<ScrollAnimation>
 									<Image
 										alt="Location"
 										className="object-cover rounded-xl max-w-4xl max-h-screen"

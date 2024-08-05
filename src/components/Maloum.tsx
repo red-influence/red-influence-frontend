@@ -4,7 +4,7 @@ import { Image } from '@nextui-org/image';
 import { PortableText } from '@portabletext/react';
 import ServiceGrid from './ServiceGrid';
 import Link from 'next/link';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export default function Maloum({
 	title,
@@ -20,12 +20,12 @@ export default function Maloum({
 	return (
 		<div className="bg-background section">
 			<div className="container md:py-20 mx-auto section" id="maloum">
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<div
 						className="maloum max-w-6xl flex flex-col gap-y-5 md:gap-y-10 mx-auto p-5 py-16 md:p-16 md:rounded-3xl"
 						id="maloum"
 					>
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<ScrollAnimation>
 							<Link href="https://www.maloum.com/de" target="_blank">
 								<Image
 									alt="Maloum Logo"
@@ -35,11 +35,11 @@ export default function Maloum({
 							</Link>
 						</ScrollAnimation>
 
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<ScrollAnimation>
 							<h2 className="text-3xl md:text-6xl">{title}</h2>
 						</ScrollAnimation>
 
-						<ScrollAnimation animateIn="fadeIn" animateOnce>
+						<ScrollAnimation>
 							<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7 pb-5">
 								<PortableText value={description as any} />
 							</div>

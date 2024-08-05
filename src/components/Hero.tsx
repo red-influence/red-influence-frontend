@@ -7,7 +7,7 @@ import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
 import { CaseStudy, Service, Hero as HeroType } from '@/types/sanity.types';
 import CaseStudiesGrid from './CaseStudiesGrid';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from '@/components/ScrollAnimation';
 
 export default function Hero({
 	headlines,
@@ -57,7 +57,7 @@ export default function Hero({
 					))}
 				</div>
 
-				<ScrollAnimation animateIn="fadeIn" animateOnce>
+				<ScrollAnimation>
 					<div className=" flex gap-y-5 gap-x-10 flex-wrap pt-5 md:pt-0">
 						{persons.map((person, index) => (
 							<User
@@ -80,13 +80,13 @@ export default function Hero({
 				</ScrollAnimation>
 			</div>
 
-			<ScrollAnimation animateIn="fadeIn" animateOnce>
+			<ScrollAnimation>
 				<div className="max-w-4xl text-md md:text-xl !leading-loose flex flex-col gap-y-7">
 					<PortableText value={description as any} />
 				</div>
 			</ScrollAnimation>
 
-			<ScrollAnimation animateIn="fadeIn" animateOnce>
+			<ScrollAnimation>
 				<CaseStudiesGrid items={case_studies} showAllButton />
 			</ScrollAnimation>
 		</div>
