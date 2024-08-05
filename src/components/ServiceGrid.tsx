@@ -3,6 +3,7 @@ import { imageToUrl } from '@/utils/sanity';
 import { Card } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import ScrollAnimation from '@/components/ScrollAnimation';
+import NextImage from 'next/image';
 
 export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 	return (
@@ -17,10 +18,12 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 								isBlurred
 							>
 								<Image
+									as={NextImage}
 									alt={item.title}
 									className="rounded-xl"
 									src={imageToUrl(item.icon).width(500).url()}
 									width={500}
+									loading="lazy"
 								/>
 								<h4 className="text-medium md:text-lg text-center">
 									{item.title}

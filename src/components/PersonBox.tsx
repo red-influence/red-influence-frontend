@@ -4,6 +4,7 @@ import { Card, CardBody } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import Link from 'next/link';
 import ScrollAnimation from './ScrollAnimation';
+import NextImage from 'next/image';
 
 export default function PersonBox({ person }: { person: Person }) {
 	return (
@@ -15,11 +16,13 @@ export default function PersonBox({ person }: { person: Person }) {
 			>
 				<CardBody className="overflow-visible py-2 flex flex-col md:flex-row gap-5 items-center md:items-start">
 					<Image
+						as={NextImage}
 						alt={person.title}
 						className="object-cover rounded-xl max-w-52"
 						src={imageToUrl(person.image).height(500).url()}
 						width={200}
 						height={250}
+						loading="lazy"
 					/>
 
 					<div className="flex flex-col gap-5 items-center md:items-start">
@@ -44,6 +47,7 @@ export default function PersonBox({ person }: { person: Person }) {
 										key={index}
 									>
 										<Image
+											as={NextImage}
 											alt={social.type}
 											src={`/${social.type.toLowerCase()}.svg`}
 											width={30}

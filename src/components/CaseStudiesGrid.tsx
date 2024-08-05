@@ -4,6 +4,7 @@ import { Button } from '@nextui-org/button';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import Link from 'next/link';
+import NextImage from 'next/image';
 
 export default function CaseStudiesGrid({
 	items,
@@ -32,6 +33,7 @@ export default function CaseStudiesGrid({
 							</CardHeader>
 							<CardBody className="overflow-visible py-2">
 								<Image
+									as={NextImage}
 									alt={`${item.title} Case Study`}
 									className="object-cover rounded-xl"
 									src={
@@ -41,6 +43,7 @@ export default function CaseStudiesGrid({
 									}
 									width={400}
 									height={200}
+									loading="lazy"
 								/>
 							</CardBody>
 						</Card>
