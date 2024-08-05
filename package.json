@@ -34,7 +34,6 @@
 	},
 	"devDependencies": {
 		"@netlify/functions": "^2.8.1",
-		"@fullhuman/postcss-purgecss": "^6.0.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-animate-on-scroll": "^2.1.8",
