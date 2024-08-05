@@ -14,6 +14,7 @@ import 'animate.css/animate.compat.css';
 
 import { getMenus, getServices, getSiteSettings } from '@/utils/sanity';
 import { Menu, Service, SiteSettings } from '@/types/sanity.types';
+import Head from 'next/head';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 	getLayout?: (page: ReactElement) => ReactNode;
@@ -37,17 +38,24 @@ export default function MyApp({
 	services,
 }: AppPropsWithLayout & AppOwnProps) {
 	return (
-		<main className={rubik.className}>
-			<Providers>
-				<PageLayout
-					siteSettings={siteSettings}
-					menus={menus}
-					services={services}
-				>
-					<Component {...pageProps} />
-				</PageLayout>
-			</Providers>
-		</main>
+		<>
+			<Head>
+				<title>{siteSettings.title}</title>
+				<meta name="description" content={siteSettings.description} />
+			</Head>
+
+			<main className={rubik.className}>
+				<Providers>
+					<PageLayout
+						siteSettings={siteSettings}
+						menus={menus}
+						services={services}
+					>
+						<Component {...pageProps} />
+					</PageLayout>
+				</Providers>
+			</main>
+		</>
 	);
 }
 

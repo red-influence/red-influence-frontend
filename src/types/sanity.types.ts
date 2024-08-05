@@ -128,6 +128,7 @@ export type SiteSettings = {
   _updatedAt: string
   _rev: string
   title: string
+  description: string
   imprint: Array<{
     children?: Array<{
       marks?: Array<string>
