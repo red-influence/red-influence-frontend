@@ -2,7 +2,7 @@
 @import 'normalize';
 
 @import 'swiper/css';
-@import 'animate.css/animate.compat.css';
+@import 'animate.compat';
 
 @import 'globals';
 
