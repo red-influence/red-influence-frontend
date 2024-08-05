@@ -279,6 +279,34 @@ export type Slug = {
   source?: string
 }
 
+export type Person = {
+  _id: string
+  _type: 'person'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  title: string
+  position: string
+  image: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  description?: string
+  socials?: Array<{
+    type: 'LinkedIn' | 'Instagram' | 'X'
+    url: string
+    _key: string
+  }>
+  orderRank?: string
+}
+
 export type Hero = {
   _id: string
   _type: 'hero'
@@ -287,22 +315,6 @@ export type Hero = {
   _rev: string
   title?: string
   headlines: Array<string>
-  persons: Array<{
-    name: string
-    image: {
-      asset?: {
-        _ref: string
-        _type: 'reference'
-        _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-      }
-      hotspot?: SanityImageHotspot
-      crop?: SanityImageCrop
-      _type: 'image'
-    }
-    instagram: string
-    _key: string
-  }>
   description: Array<{
     children?: Array<{
       marks?: Array<string>
@@ -437,6 +449,7 @@ export type AllSanitySchemaTypes =
   | CaseStudy
   | Service
   | Slug
+  | Person
   | Hero
   | About
   | SanityImageCrop

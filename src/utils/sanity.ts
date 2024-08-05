@@ -14,6 +14,7 @@ import {
 	SiteSettings,
 	internalGroqTypeReferenceTo,
 	Maloum,
+	Person,
 } from '@/types/sanity.types';
 
 export const client = createClient({
@@ -75,5 +76,12 @@ export async function getCaseStudies() {
 
 export async function getMaloum() {
 	const data = await client.fetch<Maloum>('*[_type == "maloum"][0]');
+	return data;
+}
+
+export async function getPersons() {
+	const data = await client.fetch<Person[]>(
+		'*[_type == "person"]|order(orderRank)'
+	);
 	return data;
 }

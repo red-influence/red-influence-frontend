@@ -5,7 +5,12 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PortableText } from '@portabletext/react';
 import { imageToUrl } from '@/utils/sanity';
-import { CaseStudy, Service, Hero as HeroType } from '@/types/sanity.types';
+import {
+	CaseStudy,
+	Service,
+	Hero as HeroType,
+	Person,
+} from '@/types/sanity.types';
 import CaseStudiesGrid from './CaseStudiesGrid';
 import ScrollAnimation from '@/components/ScrollAnimation';
 
@@ -18,7 +23,7 @@ export default function Hero({
 }: {
 	headlines: string[];
 	description: HeroType['description'];
-	persons: HeroType['persons'];
+	persons: Person[];
 	services: Service[];
 	case_studies: (CaseStudy & { service: { title: string } })[];
 }) {
@@ -62,15 +67,8 @@ export default function Hero({
 						{persons.map((person, index) => (
 							<User
 								key={index}
-								name={person.name}
-								description={
-									<Link
-										href={`https://instagram.com/${person.instagram}`}
-										target="_blank"
-									>
-										@{person.instagram}
-									</Link>
-								}
+								name={person.title}
+								description={person.position}
 								avatarProps={{
 									src: imageToUrl(person.image).width(100).url(),
 								}}

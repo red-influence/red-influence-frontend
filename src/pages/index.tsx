@@ -7,13 +7,14 @@ import {
 	About as AboutType,
 	Hero as HeroType,
 	Maloum as MaloumType,
+	Person,
 	Service,
 } from '@/types/sanity.types';
 import {
 	getAbout,
-	getCaseStudies,
 	getHero,
 	getMaloum,
+	getPersons,
 	getServices,
 } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -23,13 +24,15 @@ export const getStaticProps = (async (context) => {
 	const about = await getAbout();
 	const services = await getServices();
 	const maloum = await getMaloum();
+	const persons = await getPersons();
 
-	return { props: { hero, about, services, maloum } };
+	return { props: { hero, about, services, maloum, persons } };
 }) satisfies GetStaticProps<{
 	hero: HeroType;
 	about: AboutType;
 	services: Service[];
 	maloum: MaloumType;
+	persons: Person[];
 }>;
 
 export default function Home({
@@ -37,13 +40,14 @@ export default function Home({
 	about,
 	services,
 	maloum,
+	persons,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="page-content">
-			<Hero {...hero} services={services} />
+			<Hero {...hero} services={services} persons={persons} />
 			<Maloum {...maloum} />
 			<Services items={services} />
-			<About {...about} />
+			<About {...about} persons={persons} />
 			<Contact />
 		</div>
 	);
