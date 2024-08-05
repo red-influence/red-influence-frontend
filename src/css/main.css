@@ -1,9 +1,5 @@
 /* Basics */
 @import 'normalize';
-
-@import 'swiper/css';
-@import 'animate.compat';
-
 @import 'globals';
 
 @tailwind base;

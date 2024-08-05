@@ -10,7 +10,7 @@ const rubik = Rubik({ subsets: ['latin'] });
 
 import '@/css/main.css';
 import 'swiper/css';
-import 'animate.css/animate.compat.css';
+import '@/css/animate.compat.css';
 
 import { getMenus, getServices, getSiteSettings } from '@/utils/sanity';
 import { Menu, Service, SiteSettings } from '@/types/sanity.types';
