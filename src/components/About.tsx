@@ -4,7 +4,6 @@ import { Image } from '@nextui-org/image';
 import { imageToUrl } from '@/utils/sanity';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import PersonBox from './PersonBox';
-import NextImage from 'next/image';
 
 export default function About({
 	title,
@@ -39,12 +38,10 @@ export default function About({
 					<div>
 						<ScrollAnimation>
 							<Image
-								as={NextImage}
 								alt="Location"
 								className="object-cover rounded-xl"
 								src={imageToUrl(image).width(500).url()}
 								width="100%"
-								loading="lazy"
 							/>
 						</ScrollAnimation>
 					</div>

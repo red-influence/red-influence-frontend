@@ -7,7 +7,6 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
-import NextImage from 'next/image';
 
 export const getStaticPaths = (async () => {
 	const caseStudies = await getCaseStudies();
@@ -68,7 +67,6 @@ export default function Service({
 							<div>
 								<ScrollAnimation>
 									<Image
-										as={NextImage}
 										alt="Location"
 										className="object-cover rounded-xl max-w-4xl max-h-screen"
 										src={imageToUrl(caseStudy.thumbnail).width(1000).url()}

@@ -5,7 +5,6 @@ import { PortableText } from '@portabletext/react';
 import ServiceGrid from './ServiceGrid';
 import Link from 'next/link';
 import ScrollAnimation from '@/components/ScrollAnimation';
-import NextImage from 'next/image';
 
 export default function Maloum({
 	title,
@@ -29,11 +28,9 @@ export default function Maloum({
 						<ScrollAnimation>
 							<Link href="https://www.maloum.com/de" target="_blank">
 								<Image
-									as={NextImage}
 									alt="Maloum Logo"
 									src={imageToUrl(logo).width(200).url()}
 									width={200}
-									loading="lazy"
 								/>
 							</Link>
 						</ScrollAnimation>
