@@ -12,6 +12,7 @@
 		"@netlify/functions": "^2.8.1",
 		"@nextui-org/button": "^2.0.37",
 		"@nextui-org/card": "^2.0.33",
+		"@nextui-org/checkbox": "^2.1.4",
 		"@nextui-org/chip": "^2.0.32",
 		"@nextui-org/dropdown": "^2.1.29",
 		"@nextui-org/image": "^2.0.31",
@@ -35,14 +36,14 @@
 	"devDependencies": {
 		"@types/node": "^20",
 		"@types/react": "^18",
+		"@types/react-animate-on-scroll": "^2.1.8",
 		"@types/react-dom": "^18",
 		"autoprefixer": "^10.4.19",
 		"cssnano": "^7.0.4",
 		"eslint": "^8",
 		"eslint-config-next": "14.2.3",
+		"groq": "^3.52.4",
 		"postcss": "^8.4.40",
-		"typescript": "^5",
-		"@types/react-animate-on-scroll": "^2.1.8",
-		"groq": "^3.52.4"
+		"typescript": "^5"
 	}
 }

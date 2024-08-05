@@ -4,6 +4,7 @@ import { Input, Textarea } from '@nextui-org/input';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
+import { Checkbox } from '@nextui-org/checkbox';
 
 export default function Contact() {
 	const [status, setStatus] = useState<string>('idle');
@@ -101,6 +102,20 @@ export default function Contact() {
 								size="lg"
 								required
 							/>
+						</ScrollAnimation>
+
+						<ScrollAnimation className="md:col-span-2">
+							<Checkbox required>
+								Ich habe die{' '}
+								<Link
+									href="/privacy"
+									target="_blank"
+									className="hover:underline"
+								>
+									Datenschutzerklärung
+								</Link>{' '}
+								zur Kenntnis genommen
+							</Checkbox>
 						</ScrollAnimation>
 					</div>
 					<ScrollAnimation>
