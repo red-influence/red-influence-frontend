@@ -9,6 +9,7 @@ import { Checkbox } from '@nextui-org/checkbox';
 export default function Contact() {
 	const [status, setStatus] = useState<string>('idle');
 	const [error, setError] = useState<string | null>(null);
+	const [isChecked, setIsChecked] = useState<boolean>(false);
 
 	const handleFormSubmit = async (event: FormEvent) => {
 		event.preventDefault();
@@ -24,6 +25,11 @@ export default function Contact() {
 			return;
 		}
 
+		if (!isChecked) {
+			setStatus('error');
+			setError('Bitte Datenschutzerklärung akzeptieren');
+			return;
+		}
 		try {
 			setStatus('pending');
 			setError(null);
@@ -40,11 +46,11 @@ export default function Contact() {
 				setStatus('ok');
 			} else {
 				setStatus('error');
-				setError('Es ist Fehler beim Absenden aufgetreten');
+				setError('Fehler beim Absenden aufgetreten');
 			}
 		} catch (e) {
 			setStatus('error');
-			setError('Es ist ein unbekannter Fehler aufgetreten');
+			setError('Unbekannter Fehler aufgetreten');
 		}
 
 		form.reset();
@@ -105,7 +111,7 @@ export default function Contact() {
 						</ScrollAnimation>
 
 						<ScrollAnimation className="md:col-span-2">
-							<Checkbox required>
+							<Checkbox required onValueChange={(value) => setIsChecked(value)}>
 								Ich habe die{' '}
 								<Link
 									href="/privacy"
