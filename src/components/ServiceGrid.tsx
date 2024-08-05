@@ -19,8 +19,8 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 								<Image
 									alt={item.title}
 									className="rounded-xl"
-									src={imageToUrl(item.icon)}
-									width={10000}
+									src={imageToUrl(item.icon).width(500).url()}
+									width={500}
 								/>
 								<h4 className="text-md md:text-lg text-center">{item.title}</h4>
 							</Card>

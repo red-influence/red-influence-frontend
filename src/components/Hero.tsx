@@ -72,7 +72,7 @@ export default function Hero({
 									</Link>
 								}
 								avatarProps={{
-									src: imageToUrl(person.image),
+									src: imageToUrl(person.image).width(100).url(),
 								}}
 							/>
 						))}

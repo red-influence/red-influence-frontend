@@ -27,7 +27,11 @@ export default function Maloum({
 					>
 						<ScrollAnimation animateIn="fadeIn" animateOnce>
 							<Link href="https://www.maloum.com/de" target="_blank">
-								<Image alt="Maloum Logo" src={imageToUrl(logo)} width={200} />
+								<Image
+									alt="Maloum Logo"
+									src={imageToUrl(logo).width(200).url()}
+									width={200}
+								/>
 							</Link>
 						</ScrollAnimation>
 

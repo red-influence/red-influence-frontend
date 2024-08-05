@@ -69,8 +69,8 @@ export default function Service({
 									<Image
 										alt="Location"
 										className="object-cover rounded-xl max-w-4xl max-h-screen"
-										src={imageToUrl(caseStudy.thumbnail)}
-										width="100%"
+										src={imageToUrl(caseStudy.thumbnail).width(1000).url()}
+										width={'100%'}
 									/>
 								</ScrollAnimation>
 							</div>

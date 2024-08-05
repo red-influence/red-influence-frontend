@@ -36,7 +36,7 @@ export default function About({
 						<Image
 							alt="Location"
 							className="object-cover rounded-xl"
-							src={imageToUrl(image)}
+							src={imageToUrl(image).width(500).url()}
 							width="100%"
 						/>
 					</ScrollAnimation>

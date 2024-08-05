@@ -26,8 +26,8 @@ export const client = createClient({
 
 const builder = imageUrlBuilder(client);
 
-export function imageToUrl(source: any): string {
-	return String(builder.image(source));
+export function imageToUrl(source: any) {
+	return builder.image(source);
 }
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
