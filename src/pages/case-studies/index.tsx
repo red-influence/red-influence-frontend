@@ -1,6 +1,6 @@
 import CaseStudiesGrid from '@/components/CaseStudiesGrid';
-import { CaseStudy, SiteSettings } from '@/types/sanity.types';
-import { getCaseStudies, getSiteSettings } from '@/utils/sanity';
+import { CaseStudy } from '@/types/sanity.types';
+import { getCaseStudies } from '@/utils/sanity';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import ScrollAnimation from '@/components/ScrollAnimation';
 

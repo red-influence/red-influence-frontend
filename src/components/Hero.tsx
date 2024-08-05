@@ -1,6 +1,5 @@
 import { Chip } from '@nextui-org/chip';
 import { User } from '@nextui-org/user';
-import Link from 'next/link';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PortableText } from '@portabletext/react';

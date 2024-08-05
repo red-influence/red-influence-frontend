@@ -11,9 +11,6 @@ import {
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
-	NavbarMenuToggle,
-	NavbarMenu,
-	NavbarMenuItem,
 } from '@nextui-org/navbar';
 import Link from 'next/link';
 import { useState } from 'react';
