@@ -21,6 +21,7 @@ export default function ServiceGrid({ items }: { items: Service['grid'] }) {
 									className="rounded-xl"
 									src={imageToUrl(item.icon).width(500).url()}
 									width={500}
+									loading="lazy"
 								/>
 								<h4 className="text-medium md:text-lg text-center">
 									{item.title}

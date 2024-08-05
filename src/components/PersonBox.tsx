@@ -20,6 +20,7 @@ export default function PersonBox({ person }: { person: Person }) {
 						src={imageToUrl(person.image).height(500).url()}
 						width={200}
 						height={250}
+						loading="lazy"
 					/>
 
 					<div className="flex flex-col gap-5 items-center md:items-start">
@@ -48,6 +49,7 @@ export default function PersonBox({ person }: { person: Person }) {
 											src={`/${social.type.toLowerCase()}.svg`}
 											width={30}
 											height={30}
+											loading="lazy"
 										/>
 
 										<Link href={social.url} target="_blank">

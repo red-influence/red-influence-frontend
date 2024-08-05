@@ -42,6 +42,7 @@ export default function About({
 								className="object-cover rounded-xl"
 								src={imageToUrl(image).width(500).url()}
 								width="100%"
+								loading="lazy"
 							/>
 						</ScrollAnimation>
 					</div>

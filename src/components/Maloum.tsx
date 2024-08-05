@@ -31,6 +31,7 @@ export default function Maloum({
 									alt="Maloum Logo"
 									src={imageToUrl(logo).width(200).url()}
 									width={200}
+									loading="lazy"
 								/>
 							</Link>
 						</ScrollAnimation>

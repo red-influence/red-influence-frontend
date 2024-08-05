@@ -41,6 +41,7 @@ export default function CaseStudiesGrid({
 									}
 									width={400}
 									height={200}
+									loading="lazy"
 								/>
 							</CardBody>
 						</Card>
