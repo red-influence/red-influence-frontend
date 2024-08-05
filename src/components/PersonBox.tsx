@@ -17,7 +17,7 @@ export default function PersonBox({ person }: { person: Person }) {
 					<Image
 						alt={person.title}
 						className="object-cover rounded-xl max-w-52"
-						src={imageToUrl(person.image).height(500).url()}
+						src={imageToUrl(person.image).height(300).auto('format').url()}
 						width={200}
 						height={250}
 						loading="lazy"

@@ -36,7 +36,10 @@ export default function CaseStudiesGrid({
 									className="object-cover rounded-xl"
 									src={
 										item.thumbnail
-											? imageToUrl(item.thumbnail).width(400).url()
+											? imageToUrl(item.thumbnail)
+													.width(400)
+													.auto('format')
+													.url()
 											: '/placeholder.webp'
 									}
 									width={400}

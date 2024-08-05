@@ -29,7 +29,7 @@ export default function Maloum({
 							<Link href="https://www.maloum.com/de" target="_blank">
 								<Image
 									alt="Maloum Logo"
-									src={imageToUrl(logo).width(200).url()}
+									src={imageToUrl(logo).width(200).auto('format').url()}
 									width={200}
 									loading="lazy"
 								/>

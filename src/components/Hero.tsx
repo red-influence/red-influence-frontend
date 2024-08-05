@@ -70,7 +70,7 @@ export default function Hero({
 								name={person.title}
 								description={person.position}
 								avatarProps={{
-									src: imageToUrl(person.image).width(100).url(),
+									src: imageToUrl(person.image).width(100).auto('format').url(),
 								}}
 							/>
 						))}
