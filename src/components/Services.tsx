@@ -5,8 +5,6 @@ import ServiceGrid from './ServiceGrid';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function Services({ items }: { items: Service[] }) {
-	console.log(items);
-
 	return (
 		<div className="services bg-background px-5 md:px-0 section" id="services">
 			<div
