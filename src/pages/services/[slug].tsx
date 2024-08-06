@@ -65,7 +65,10 @@ export default function Service({
 						)}
 					</ScrollAnimation>
 
-					<ServiceGrid items={service.grid} />
+					<ServiceGrid
+						items={service.grid}
+						isFull={service.grid_type === 'full'}
+					/>
 				</div>
 			) : (
 				<Error404 />
