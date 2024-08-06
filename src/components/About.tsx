@@ -41,7 +41,7 @@ export default function About({
 								alt="Location"
 								className="object-cover rounded-xl"
 								src={imageToUrl(image)
-									.width(500)
+									.width(800)
 									.auto('format')
 									.quality(70)
 									.url()}
