@@ -9,9 +9,8 @@ export default function PersonBox({ person }: { person: Person }) {
 	return (
 		<ScrollAnimation>
 			<Card
-				className="py-4 bg-transparent md:bg-background/60 md:dark:bg-default-100/50 w-full md:max-w-2xl"
+				className="py-4 bg-transparent md:bg-background/60 md:dark:bg-default-100/50 w-full md:max-w-2xl md:backdrop-blur-md md:backdrop-saturate-150"
 				shadow="none"
-				isBlurred
 			>
 				<CardBody className="overflow-visible py-2 flex flex-col md:flex-row gap-5 items-center md:items-start">
 					<Image
