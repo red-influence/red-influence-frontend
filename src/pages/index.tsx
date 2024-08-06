@@ -45,7 +45,7 @@ export default function Home({
 	return (
 		<div className="page-content">
 			<Hero {...hero} services={services} persons={persons} />
-			<Maloum {...maloum} />
+			{maloum.visible && <Maloum {...maloum} />}
 			<Services items={services} />
 			<About {...about} persons={persons} />
 			<Contact />

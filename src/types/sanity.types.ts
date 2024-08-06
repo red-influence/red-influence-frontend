@@ -74,6 +74,7 @@ export type Maloum = {
   _createdAt: string
   _updatedAt: string
   _rev: string
+  visible: boolean
   title: string
   description: Array<{
     children?: Array<{
