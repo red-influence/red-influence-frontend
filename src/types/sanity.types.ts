@@ -256,6 +256,7 @@ export type Service = {
     _type: 'block'
     _key: string
   }>
+  grid_type: 'basic' | 'full'
   grid?: Array<{
     title: string
     icon: {
@@ -269,6 +270,7 @@ export type Service = {
       crop?: SanityImageCrop
       _type: 'image'
     }
+    description?: string
     _key: string
   }>
   orderRank?: string
