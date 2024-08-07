@@ -22,7 +22,6 @@ export const client = createClient({
 	dataset: process.env.NEXT_PUBLIC_SANITY_CLIENT_API_DATASET ?? 'production',
 	useCdn: true, // set to `false` to bypass the edge cache
 	apiVersion: 'v2024-07-17', // use current date (YYYY-MM-DD) to target the latest API version
-	token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN, // Only if you want to update content with the client
 });
 
 const builder = imageUrlBuilder(client);
