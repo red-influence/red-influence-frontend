@@ -83,9 +83,11 @@ export default function Hero({
 				</div>
 			</ScrollAnimation>
 
-			<ScrollAnimation>
-				<CaseStudiesGrid items={case_studies} showAllButton />
-			</ScrollAnimation>
+			{case_studies && (
+				<ScrollAnimation>
+					<CaseStudiesGrid items={case_studies} showAllButton />
+				</ScrollAnimation>
+			)}
 		</div>
 	);
 }

@@ -166,6 +166,7 @@ export type SiteSettings = {
     _type: 'block'
     _key: string
   }>
+  email_address: string
 }
 
 export type Menu = {

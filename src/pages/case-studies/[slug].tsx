@@ -50,7 +50,7 @@ export default function Service({
 			{caseStudy ? (
 				<div className="container mx-auto flex flex-col gap-y-10 py-12 md:py-20 px-5 md:px-0">
 					<ScrollAnimation>
-						<h2 className="text-3xl md:text-6xl">{caseStudy.title}</h2>
+						<h1 className="text-3xl md:text-6xl">{caseStudy.title}</h1>
 					</ScrollAnimation>
 					<div className="grid md:grid-flow-col gap-12 md:gap-20 items-center">
 						{caseStudy.description && (

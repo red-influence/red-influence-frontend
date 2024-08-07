@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-export default function Banner() {
+export default function Banner({ emailAddress }: { emailAddress: string }) {
 	return (
 		<div className="banner w-full h-10 flex justify-center items-center gap-4 bg-primary px-5">
-			<Link href="mailto:mail@red-influence.com" className="text-background">
-				mail@red-influence.com
+			<Link href={`mailto:${emailAddress}`} className="text-background">
+				{emailAddress}
 			</Link>
 		</div>
 	);
