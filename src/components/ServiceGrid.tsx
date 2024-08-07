@@ -67,6 +67,7 @@ export default function ServiceGrid({
 										.quality(70)
 										.url()}
 									width={300}
+									height={300}
 									loading="lazy"
 								/>
 								<div className="flex flex-col gap-5 flex-1">
