@@ -4,18 +4,20 @@ import { Card } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import clsx from 'clsx';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 export default function ServiceGrid({
 	items,
 	isFull = false,
+	showAll = false,
 }: {
 	items: Service['grid'];
 	isFull?: boolean;
+	showAll?: boolean;
 }) {
 	const hasMore = useMemo(
-		() => (items && !isFull ? items.length > 6 : false),
-		[items, isFull]
+		() => (items && !showAll ? items.length > 6 : false),
+		[items, showAll]
 	);
 
 	const reducedItems = useMemo(
@@ -67,7 +69,7 @@ export default function ServiceGrid({
 										.quality(70)
 										.url()}
 									width={300}
-									height={300}
+									height={!isFull ? 300 : undefined}
 									loading="lazy"
 								/>
 								<div className="flex flex-col gap-5 flex-1">
