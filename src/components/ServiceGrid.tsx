@@ -20,13 +20,13 @@ export default function ServiceGrid({
 
 	const reducedItems = useMemo(
 		() => (hasMore ? items?.filter((item, index) => index < 5) : undefined),
-		[items, hasMore, isFull]
+		[items, hasMore]
 	);
 
 	const moreCount = useMemo(
 		() =>
 			reducedItems && items ? items.length - reducedItems.length : undefined,
-		[reducedItems]
+		[reducedItems, items]
 	);
 
 	return (
