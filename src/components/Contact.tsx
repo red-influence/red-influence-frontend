@@ -6,7 +6,7 @@ import { FormEvent, useState } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import { Checkbox } from '@nextui-org/checkbox';
 
-export default function Contact() {
+export default function Contact({ emailAddress }: { emailAddress: string }) {
 	const [status, setStatus] = useState<string>('idle');
 	const [error, setError] = useState<string | null>(null);
 	const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -147,7 +147,7 @@ export default function Contact() {
 
 				<ScrollAnimation>
 					<Link
-						href="mailto:mail@red-influence.com"
+						href={`mailto:${emailAddress}`}
 						className="text-medium md:text-xl"
 					>
 						Oder einfach per Mail.

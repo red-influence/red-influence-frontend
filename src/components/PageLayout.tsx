@@ -28,7 +28,7 @@ export default function RootLayout({
 	return (
 		<div id="content">
 			<div className="header fixed top-0 w-full z-50">
-				<Banner />
+				<Banner emailAddress={siteSettings.email_address} />
 				<Navigation
 					title={siteSettings.title}
 					menu={mainMenu as Menu}
