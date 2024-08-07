@@ -68,6 +68,7 @@ export default function Service({
 					<ServiceGrid
 						items={service.grid}
 						isFull={service.grid_type === 'full'}
+						showAll
 					/>
 				</div>
 			) : (
