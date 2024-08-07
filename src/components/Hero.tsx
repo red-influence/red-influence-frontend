@@ -83,7 +83,7 @@ export default function Hero({
 				</div>
 			</ScrollAnimation>
 
-			{case_studies.length > 0 && (
+			{case_studies && (
 				<ScrollAnimation>
 					<CaseStudiesGrid items={case_studies} showAllButton />
 				</ScrollAnimation>

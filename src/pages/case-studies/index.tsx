@@ -21,9 +21,11 @@ export default function CaseStudies({
 					<h1 className="text-3xl md:text-6xl">Case Studies</h1>
 				</ScrollAnimation>
 
-				<ScrollAnimation>
-					<CaseStudiesGrid items={caseStudies} />
-				</ScrollAnimation>
+				{caseStudies && (
+					<ScrollAnimation>
+						<CaseStudiesGrid items={caseStudies} />
+					</ScrollAnimation>
+				)}
 			</div>
 		</div>
 	);
