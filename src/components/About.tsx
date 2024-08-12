@@ -4,6 +4,7 @@ import { Image } from '@nextui-org/image';
 import { imageToUrl } from '@/utils/sanity';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import PersonList from './PersonList';
+import { Accordion, AccordionItem } from '@nextui-org/accordion';
 
 export default function About({
 	title,
@@ -53,7 +54,25 @@ export default function About({
 				)}
 			</div>
 
-			<PersonList items={persons} />
+			<Accordion className="!px-0">
+				<AccordionItem
+					key="1"
+					aria-label="Unser Team"
+					title={<h3 className="text-2xl md:text-4xl">Unser Team</h3>}
+					indicator={({ isOpen }) => (
+						<Image
+							src="arrow-left.svg"
+							width={48}
+							height={48}
+							className="max-w-8 md:max-w-full"
+						/>
+					)}
+				>
+					<div className="pt-5">
+						<PersonList items={persons} />
+					</div>
+				</AccordionItem>
+			</Accordion>
 		</div>
 	);
 }
