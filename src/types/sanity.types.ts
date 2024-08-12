@@ -167,6 +167,11 @@ export type SiteSettings = {
     _key: string
   }>
   email_address: string
+  socials?: Array<{
+    type: 'LinkedIn' | 'Instagram' | 'X'
+    url: string
+    _key: string
+  }>
 }
 
 export type Menu = {

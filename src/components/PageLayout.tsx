@@ -38,7 +38,11 @@ export default function RootLayout({
 
 			{children}
 
-			<Footer copyright={siteSettings.title} menu={footerMenu as Menu} />
+			<Footer
+				copyright={siteSettings.title}
+				menu={footerMenu as Menu}
+				socials={siteSettings.socials ?? undefined}
+			/>
 		</div>
 	);
 }

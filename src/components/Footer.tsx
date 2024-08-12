@@ -1,12 +1,16 @@
+import Social from '@/types/Social';
 import { Menu } from '@/types/sanity.types';
 import Link from 'next/link';
+import Socials from './Socials';
 
 export default function Footer({
 	copyright,
 	menu,
+	socials,
 }: {
 	copyright: string;
 	menu: Menu;
+	socials: Social[] | undefined;
 }) {
 	return (
 		<div className="banner w-full bg-background">
@@ -14,6 +18,8 @@ export default function Footer({
 				<span>
 					© {new Date().getFullYear()} {copyright}
 				</span>
+
+				{socials && <Socials items={socials} />}
 
 				<div className="flex gap-4">
 					{menu.items.map((item, index) => (
