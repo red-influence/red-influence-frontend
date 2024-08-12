@@ -2,8 +2,8 @@ import { Person } from '@/types/sanity.types';
 import { imageToUrl } from '@/utils/sanity';
 import { Card, CardBody } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
-import Link from 'next/link';
 import ScrollAnimation from './ScrollAnimation';
+import Socials from './Socials';
 
 export default function PersonBox({ person }: { person: Person }) {
 	return (
@@ -41,25 +41,8 @@ export default function PersonBox({ person }: { person: Person }) {
 						</p>
 
 						{person.socials && (
-							<div className="flex gap-y-2 gap-x-5 flex-wrap">
-								{person.socials.map((social, index) => (
-									<div
-										className="flex gap-1 hover:underline items-center opacity-60"
-										key={index}
-									>
-										<Image
-											alt={social.type}
-											src={`/${social.type.toLowerCase()}.svg`}
-											width={30}
-											height={30}
-											loading="lazy"
-										/>
-
-										<Link href={social.url} target="_blank">
-											{social.type}
-										</Link>
-									</div>
-								))}
+							<div className="opacity-60">
+								<Socials items={person.socials} />
 							</div>
 						)}
 					</div>

@@ -1,12 +1,13 @@
 import Error404 from '@/components/Error404';
 import ServiceGrid from '@/components/ServiceGrid';
-import { Service as ServiceType } from '@/types/sanity.types';
+import { Person, Service as ServiceType } from '@/types/sanity.types';
 import { getServices } from '@/utils/sanity';
 import { PortableText } from '@portabletext/react';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
+import PersonList from '@/components/PersonList';
 
 export const getStaticPaths = (async () => {
 	const services = await getServices();
@@ -28,7 +29,7 @@ export const getStaticProps = (async (context) => {
 
 	return { props: { services } };
 }) satisfies GetStaticProps<{
-	services: ServiceType[];
+	services: (ServiceType & { persons: Person[] })[];
 }>;
 
 export default function Service({
@@ -44,6 +45,8 @@ export default function Service({
 				: undefined,
 		[slug, services]
 	);
+
+	console.log(service);
 
 	return (
 		<div className="page-content">
@@ -70,6 +73,15 @@ export default function Service({
 						isFull={service.grid_type === 'full'}
 						showAll
 					/>
+
+					{service.persons && (
+						<ScrollAnimation>
+							<div className="flex flex-col gap-y-10 pt-12 md:pt-20">
+								<h2 className="text-2xl md:text-4xl">Deine Ansprechpartner</h2>
+								<PersonList items={service.persons} />
+							</div>
+						</ScrollAnimation>
+					)}
 				</div>
 			) : (
 				<Error404 />

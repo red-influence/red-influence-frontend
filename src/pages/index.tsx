@@ -33,7 +33,7 @@ export const getStaticProps = (async (context) => {
 }) satisfies GetStaticProps<{
 	hero: HeroType;
 	about: AboutType;
-	services: Service[];
+	services: (Service & { persons: Person[] })[];
 	maloum: MaloumType;
 	persons: Person[];
 	siteSettings: SiteSettings;

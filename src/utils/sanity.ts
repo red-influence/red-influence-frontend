@@ -60,8 +60,8 @@ export async function getAbout() {
 }
 
 export async function getServices() {
-	const data = await client.fetch<Service[]>(
-		'*[_type == "service"]|order(orderRank)'
+	const data = await client.fetch<(Service & { persons: Person[] })[]>(
+		'*[_type == "service"]|order(orderRank){..., persons[]->{..., person->{...}}}'
 	);
 	return data;
 }

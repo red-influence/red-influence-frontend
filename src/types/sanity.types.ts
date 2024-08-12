@@ -167,6 +167,11 @@ export type SiteSettings = {
     _key: string
   }>
   email_address: string
+  socials?: Array<{
+    type: 'LinkedIn' | 'Instagram' | 'X'
+    url: string
+    _key: string
+  }>
 }
 
 export type Menu = {
@@ -256,6 +261,13 @@ export type Service = {
     level?: number
     _type: 'block'
     _key: string
+  }>
+  persons?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'person'
   }>
   grid_type: 'basic' | 'full'
   grid?: Array<{
