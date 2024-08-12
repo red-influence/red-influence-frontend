@@ -44,6 +44,25 @@ export default function MyApp({
 				<meta name="description" content={siteSettings.description} />
 				<link rel="preconnect" href="https://cdn.sanity.io" />
 				<link rel="dns-prefetch" href="https://cdn.sanity.io" />
+				<meta property="og:title" content={siteSettings.title} />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:image"
+					content={`${
+						process.env.NEXT_PUBLIC_SITE_URL ?? 'https://red-influence.com'
+					}/og-image.jpg`}
+				/>
+				<meta
+					property="og:url"
+					content={
+						process.env.NEXT_PUBLIC_SITE_URL ?? 'https://red-influence.com'
+					}
+				/>
+				<meta name="twitter:card" content="summary" />
+
+				<meta property="og:description" content={siteSettings.description} />
+				<meta property="og:site_name" content={siteSettings.title} />
+				<meta name="twitter:image:alt" content={siteSettings.title} />
 			</Head>
 
 			<main className={rubik.className}>
