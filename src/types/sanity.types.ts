@@ -257,6 +257,13 @@ export type Service = {
     _type: 'block'
     _key: string
   }>
+  persons?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'person'
+  }>
   grid_type: 'basic' | 'full'
   grid?: Array<{
     title: string

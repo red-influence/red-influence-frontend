@@ -3,7 +3,7 @@ import { About as AboutType, Person } from '@/types/sanity.types';
 import { Image } from '@nextui-org/image';
 import { imageToUrl } from '@/utils/sanity';
 import ScrollAnimation from '@/components/ScrollAnimation';
-import PersonBox from './PersonBox';
+import PersonList from './PersonList';
 
 export default function About({
 	title,
@@ -53,11 +53,7 @@ export default function About({
 				)}
 			</div>
 
-			<div className="flex gap-3 md:gap-6 flex-wrap">
-				{persons.map((person, index) =>
-					person.description ? <PersonBox person={person} key={index} /> : null
-				)}
-			</div>
+			<PersonList items={persons} />
 		</div>
 	);
 }

@@ -60,21 +60,6 @@ export default function Hero({
 						</Chip>
 					))}
 				</div>
-
-				<ScrollAnimation>
-					<div className=" flex gap-y-5 gap-x-10 flex-wrap pt-5 md:pt-0">
-						{persons.map((person, index) => (
-							<User
-								key={index}
-								name={person.title}
-								description={person.position}
-								avatarProps={{
-									src: imageToUrl(person.image).width(100).auto('format').url(),
-								}}
-							/>
-						))}
-					</div>
-				</ScrollAnimation>
 			</div>
 
 			<ScrollAnimation>

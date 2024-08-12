@@ -1,10 +1,16 @@
-import { Service } from '@/types/sanity.types';
+import { Person, Service } from '@/types/sanity.types';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
 import ServiceGrid from './ServiceGrid';
 import ScrollAnimation from '@/components/ScrollAnimation';
+import { User } from '@nextui-org/user';
+import { imageToUrl } from '@/utils/sanity';
 
-export default function Services({ items }: { items: Service[] }) {
+export default function Services({
+	items,
+}: {
+	items: (Service & { persons: Person[] })[];
+}) {
 	return (
 		<div className="services bg-background px-5 md:px-0 section" id="services">
 			<div
@@ -33,6 +39,26 @@ export default function Services({ items }: { items: Service[] }) {
 										{service.teaser}
 									</p>
 								</ScrollAnimation>
+
+								{service.persons && (
+									<ScrollAnimation>
+										<div className=" flex gap-y-5 gap-x-10 flex-wrap pb-3">
+											{service.persons.map((person: Person, index) => (
+												<User
+													key={index}
+													name={person.title}
+													description={person.position}
+													avatarProps={{
+														src: imageToUrl(person.image)
+															.width(100)
+															.auto('format')
+															.url(),
+													}}
+												/>
+											))}
+										</div>
+									</ScrollAnimation>
+								)}
 
 								<ScrollAnimation>
 									<Button
