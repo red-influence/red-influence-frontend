@@ -53,7 +53,10 @@ export default function Home({
 			{maloum.visible && <Maloum {...maloum} />}
 			<Services items={services} />
 			<About {...about} persons={persons} />
-			<Contact emailAddress={siteSettings.email_address} />
+			<Contact
+				emailAddress={siteSettings.email_address}
+				calendlyUrl={siteSettings.calendly_url ?? undefined}
+			/>
 		</div>
 	);
 }

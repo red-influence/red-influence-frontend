@@ -167,6 +167,7 @@ export type SiteSettings = {
     _key: string
   }>
   email_address: string
+  calendly_url?: string
   socials?: Array<{
     type: 'LinkedIn' | 'Instagram' | 'X'
     url: string

@@ -5,11 +5,47 @@ import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import { Checkbox } from '@nextui-org/checkbox';
+import { InlineWidget } from 'react-calendly';
+import {
+	Modal,
+	ModalBody,
+	ModalContent,
+	useDisclosure,
+} from '@nextui-org/modal';
 
-export default function Contact({ emailAddress }: { emailAddress: string }) {
+function CalendlyWidget({ url }: { url: string }) {
+	return (
+		<InlineWidget
+			url={url}
+			pageSettings={{
+				backgroundColor: '18181B',
+				hideEventTypeDetails: true,
+				hideLandingPageDetails: true,
+				primaryColor: 'F30A49',
+				textColor: 'DDE6ED',
+			}}
+			styles={{
+				colorScheme: 'white',
+				height: '600px',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+			}}
+		/>
+	);
+}
+
+export default function Contact({
+	emailAddress,
+	calendlyUrl,
+}: {
+	emailAddress: string;
+	calendlyUrl: string | undefined;
+}) {
 	const [status, setStatus] = useState<string>('idle');
 	const [error, setError] = useState<string | null>(null);
 	const [isChecked, setIsChecked] = useState<boolean>(false);
+	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	const handleFormSubmit = async (event: FormEvent) => {
 		event.preventDefault();
@@ -62,6 +98,32 @@ export default function Contact({ emailAddress }: { emailAddress: string }) {
 				<ScrollAnimation>
 					<h2 className="text-3xl md:text-6xl">Kontaktiere uns jetzt</h2>
 				</ScrollAnimation>
+
+				{calendlyUrl && (
+					<>
+						<div className="flex gap-5 flex-col md:flex-row items-center">
+							<Button onPress={onOpen} color="primary">
+								Direkt Termimn buchen
+							</Button>
+
+							<p className="text-medium">oder eine Nachricht hinterlassen:</p>
+						</div>
+
+						<Modal
+							isOpen={isOpen}
+							onOpenChange={onOpenChange}
+							className="calendly-modal self-center"
+						>
+							<ModalContent>
+								{() => (
+									<ModalBody className="!p-0">
+										<CalendlyWidget url={calendlyUrl} />
+									</ModalBody>
+								)}
+							</ModalContent>
+						</Modal>
+					</>
+				)}
 
 				<form
 					className="w-full max-w-6xl flex flex-col gap-10 items-start"
