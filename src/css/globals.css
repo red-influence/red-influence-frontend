@@ -88,3 +88,8 @@ main {
 .portable-text h3 {
 	@apply text-xl md:text-2xl;
 }
+
+.calendly-modal button {
+	left: 0.25rem;
+	right: auto !important;
+}
