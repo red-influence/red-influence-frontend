@@ -56,23 +56,23 @@ export default function Service({
 						<h1 className="text-3xl md:text-6xl">{service.title}</h1>
 					</ScrollAnimation>
 
-					<ScrollAnimation>
-						{service.description ? (
-							<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 pb-5 portable-text">
-								<PortableText value={service.description as any} />
-							</div>
-						) : (
-							<p className="max-w-4xl text-medium md:text-xl !leading-loose pb-0 md:pb-10">
-								{service.teaser}
-							</p>
-						)}
-					</ScrollAnimation>
+					<p className="max-w-4xl text-medium md:text-xl !leading-loose">
+						{service.teaser}
+					</p>
 
 					<ServiceGrid
 						items={service.grid}
 						isFull={service.grid_type === 'full'}
 						showAll
 					/>
+
+					<ScrollAnimation>
+						{service.description && (
+							<div className="max-w-4xl text-medium md:text-xl !leading-loose flex flex-col gap-y-7 pb-5 portable-text">
+								<PortableText value={service.description as any} />
+							</div>
+						)}
+					</ScrollAnimation>
 
 					{service.persons && (
 						<ScrollAnimation>
