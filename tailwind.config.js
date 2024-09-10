@@ -24,7 +24,7 @@ module.exports = {
 						foreground: '#DDE6ED', // or 50 to 900 DEFAULT
 						primary: {
 							foreground: '#DDE6ED',
-							DEFAULT: '#F30A49',
+							DEFAULT: '#E0003B',
 						},
 					},
 				},
