@@ -103,7 +103,7 @@ export default function Contact({
 					<>
 						<div className="flex gap-5 flex-col md:flex-row items-center">
 							<Button onPress={onOpen} color="primary">
-								Direkt Termimn buchen
+								Direkt Termin buchen
 							</Button>
 
 							<p className="text-medium">oder eine Nachricht hinterlassen:</p>
